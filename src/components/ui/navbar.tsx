@@ -36,10 +36,10 @@ export default function NavBar() {
 
 
     return (
-        <nav className="relative z-20 text-black md:mb-15 mb-15">
+        <nav className="relative z-20 text-black">
 
             {/* Desktop */}
-            <div className={`flex w-full fixed z-20 items-center justify-between transition-all ${scrolled ? "py-2" : "py-6"}  px-4 border-b-2 bg-white  border-b-black `}>
+            <div className={`flex w-full fixed z-20 items-center justify-between transition-all ${scrolled ? "py-2" : "py-6"}  px-6 bg-white`}>
 
                 <div className={`font-extrabold transition-all ${scrolled ? "text-xl" : "text-2xl"}`}>
                     <Link className="uppercase" href={"/"} onClick={() => setOpen(false)}>{siteConfig.businessName}</Link>
@@ -52,7 +52,7 @@ export default function NavBar() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="font-semibold hover:text-amber-400"
+                            className="text-lg font-semibold hover:text-teal-400"
                         // onClick={() => setOpen(false)}
                         >
                             {link.label}
