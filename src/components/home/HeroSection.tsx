@@ -1,28 +1,25 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Hepurplection() {
-
-    const title = "Mugz.Dev";
-    const description = "Modern, responsive websites and web applications built for businesses that want a fast, professional online presence.";
+export default function HeroSection() {
 
     return (
         <div>
 
             {/* Background */}
-            < div className="fixed inset-0 -z-10 bg-linear-to-br from-amber-600 via-slate-500 to-purple-700" />
+            < div className="fixed inset-0 -z-10 bg-linear-to-br from-slate-900 to-purple-950" />
 
             {/* Hero section */}
-            < div className="min-h-dvh max-w-7xl mx-auto w-full flex flex-row justify-between" >
+            < div className="min-h-dvh max-w-7xl mx-auto w-full flex" >
 
                 {/* Slogan + services link */}
-                <div className=" max-w-4xl flex flex-col my-auto text-white p-5 m-3">
+                <div className=" max-w-4xl flex flex-col m-auto text-white p-5 ">
 
-                    <h1 className="lg:text-9xl md:text-7xl text-5xl text-shadow-lg font-bold border-b-3 p-5 pb-8">
-                        {title}
+                    <h1 className="lg:text-9xl md:text-7xl text-5xl text-shadow-lg font-bold border-b-3 p-5 pb-8 text-center">
+                        Mugz.Dev
                     </h1>
                     <h2 className="lg:text-3xl md:text-2xl  text-shadow-lg text-xl p-5 text-center">
-                        {description}
+                        Fast, responsive and professional websites and apps built around your business.
                     </h2>
                     <div className="w-full font-semibold flex justify-center gap-4 text-center">
                         <Link
@@ -41,15 +38,7 @@ export default function Hepurplection() {
 
                 </div>
 
-                {/* scroll wheel (desktop) */}
-                <div className="hidden md:flex m-auto w-full flex-col items-center gap-2 text-white animate-bounce">
-                    <span className="text-sm tracking-widest uppercase text-center ">
-                        <h1>Scroll</h1>
-                    </span>
-                    <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
-                        <div className="w-1.5 h-3 bg-white rounded-full animate-pulse" />
-                    </div>
-                </div>
+
 
 
 
