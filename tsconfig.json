@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@prisma-db": ["./prisma/db"],
+      "@public/*": ["./public/*"],
     }
   },
   "include": [
