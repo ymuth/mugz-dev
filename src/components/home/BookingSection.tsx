@@ -96,7 +96,7 @@ export default function BookingSection() {
     }
 
     return (
-        <section className="relative w-full flex flex-col bg-linear-to-br from-zinc-100 via-zinc-200 to-slate-300">
+        <section className="relative w-full flex flex-col bg-black bg-linear-to-br from-zinc-100/80 via-zinc-200/80 to-slate-300/80">
             <div className="p-10 md:p-20 max-w-7xl w-full mx-auto">
                 <h2 className="text-5xl border-b-7 border-black text-black mx-auto text-center font-bold w-fit pb-3 mb-10">
                     Request a Free Quote
@@ -224,7 +224,7 @@ export default function BookingSection() {
                             value={form.message}
                             onChange={handleInputChange}
                             required
-                            className="mt-2 p-3 border rounded-lg shadow-sm min-h-[140px] focus:outline-none focus:ring-2 focus:ring-teal-300"
+                            className="mt-2 p-3 border rounded-lg shadow-sm min-h-35 focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
                     </label>
 

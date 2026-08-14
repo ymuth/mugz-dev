@@ -10,7 +10,7 @@ export default function Home() {
 
       <HeroSection />
       <section id="services"><ServicesSection /></section>
-      <BookingSection />
+      <section id="contact"><BookingSection /></section>
 
     </div>
   );
