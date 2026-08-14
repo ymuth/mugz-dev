@@ -19,9 +19,6 @@ export default function Home() {
 
 
 // TODO:
-// 
-
-// TODO:
 // Hero — what Mugz.Dev does + CTA. DONE
 // Services — Essentials + Custom Solutions.
 // How It Works — this is especially important because you're selling a service.
