@@ -13,26 +13,34 @@ export default function Footer() {
 
             <div className="flex flex-row justify-between w-full mx-auto md:w-[50%] m-3">
 
-                <div className="flex flex-col text-gray-400">
+                <div className="flex flex-col text-slate-700">
                     <h1 className="text-black font-semibold">Routes</h1>
-                    <Link className="hover:underline hover:text-gray-700" href="/">Home</Link>
-                    <Link className="hover:underline hover:text-gray-700" href="/about">About</Link>
-                    <Link className="hover:underline hover:text-gray-700" href="/services">Services</Link>
-                    <Link className="hover:underline hover:text-gray-700" href="/contact">Contact</Link>
+                    <Link className="hover:underline" href="/">Home</Link>
+                    <Link className="hover:underline" href="/about">About</Link>
+                    <Link className="hover:underline" href="/services">Services</Link>
+                    <Link className="hover:underline" href="/contact">Contact</Link>
                 </div>
 
-                <div className="flex flex-col text-gray-400">
+                <div className="flex flex-col text-slate-700">
                     <h1 className="text-black font-semibold">Resources</h1>
-                    <Link className="hover:underline hover:text-gray-700" href="/services">Services</Link>
-                    {/* <Link className="hover:underline hover:text-gray-700" href="/products">Products</Link> */}
-                    {/* <Link className="hover:underline hover:text-gray-700" href="/#testimonials">Testimonials</Link> */}
-                    <Link className="hover:underline hover:text-gray-700" href="/services/#booking">Get a Quote</Link>
+                    <Link className="hover:underline" href="#services">Options</Link>
+                    <Link className="hover:underline" href="#explaination">How it Works</Link>
+                    <Link className="hover:underline" href="#FAQ">FAQ</Link>
+                    <Link className="hover:underline" href="/services/#booking">Get a Quote</Link>
                 </div>
 
                 <div className="flex flex-col justify-between gap-3 text-center text-3xl">
                     {/* <a className="hover:text-blue-500" href={siteConfig.socials.facebook}><FaFacebookSquare /></a> */}
                     {/* <a className="hover:text-pink-600" href={siteConfig.socials.instagram}><FaInstagramSquare /></a> */}
-                    <a className="hover:text-red-500" href={`mailto:${siteConfig.businessEmail}`}><MdEmail /></a>
+                    <a
+                        className="hover:text-red-500"
+                        href={`mailto:${siteConfig.businessEmail}`}
+                        aria-label={`Email ${siteConfig.businessName}`}
+                        title={`Email ${siteConfig.businessName}`}
+                    >
+                        <MdEmail />
+                        <span className="sr-only">Email {siteConfig.businessName}</span>
+                    </a>
 
                 </div>
             </div>

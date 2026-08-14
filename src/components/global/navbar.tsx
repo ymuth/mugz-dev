@@ -43,7 +43,7 @@ export default function NavBar() {
 
                 <div className={`font-extrabold transition-all ${scrolled ? "text-xl" : "text-2xl"}`}>
                     <Link className="uppercase flex items-center gap-2" href={"/"} onClick={() => setOpen(false)}>
-                        <img src="/icon.svg" alt={siteConfig.businessName} className="h-8 w-8" />
+                        <img src="/icon.svg" alt={siteConfig.businessName +"logo"} className="h-8 w-8" />
                         <span>{siteConfig.businessName}</span>
                     </Link>
                 </div>
