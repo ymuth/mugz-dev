@@ -1,6 +1,6 @@
 export const siteConfig = {
   businessName: "Mugz.Dev",
-  businessEmail: "TODO",
+  businessEmail: "hello@mugz.dev",
   businessPhone: "TODO",
   from: "Mugz <hello@mugz.dev>",
   googleReviewLink: "https://g.page/r/your-review-link/review",
