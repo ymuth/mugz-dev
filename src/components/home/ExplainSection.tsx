@@ -1,15 +1,3 @@
-// 01  Tell us what you need
-//     Send us a few details about your business and project.
-
-// 02  We plan your website
-//     We'll discuss your requirements, design and provide a clear quote.
-
-// 03  We build it
-//     Your website is designed, developed and tested across devices.
-
-// 04  You're live
-//     We deploy your website and take care of hosting and ongoing maintenance.
-
 export default function ExplainSection() {
     const steps = [
         {
@@ -57,7 +45,7 @@ export default function ExplainSection() {
                     </p>
                 </div>
 
-                <div className={`relative grid gap-10 md:grid-cols-${steps.length}`}>
+                <div className="relative grid gap-10 md:grid-cols-4">
 
                     {/* Desktop connecting line */}
                     <div className="absolute left-0 right-0 top-8 hidden h-px bg-zinc-700 md:block" />
