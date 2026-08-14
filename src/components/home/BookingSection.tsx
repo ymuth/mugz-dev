@@ -1,8 +1,32 @@
 'use client'
 import React, { useState } from "react";
 
-type ServiceOption = "essentials" | "custom" | "not-sure";
-type BudgetOption = "300-500" | "500-1000" | "1000+" | "not-sure";
+const serviceOptions = [
+    { value: "essentials", label: "Essentials website" },
+    { value: "custom", label: "Custom website / web app" },
+    { value: "not-sure", label: "Not sure" },
+] as const;
+type ServiceOption = typeof serviceOptions[number]["value"];
+
+const budgetOptions = [
+    { value: "under-500", label: "Under £500" },
+    { value: "500-1000", label: "£500 - £1,000" },
+    { value: "1000+", label: "£1,000+" },
+    { value: "not-sure", label: "Not sure" },
+] as const;
+type BudgetOption = typeof budgetOptions[number]["value"];
+
+const needsOptions = [
+    "New website",
+    "Website redesign",
+    "Additional pages",
+    "Booking system",
+    "Admin dashboard",
+    "Customer/staff accounts",
+    "Database",
+    "Email automation",
+    "Other",
+];
 
 interface FormData {
     name: string;
@@ -32,18 +56,6 @@ export default function BookingSection() {
     });
     const [submitting, setSubmitting] = useState(false);
     const [statusMessage, setStatusMessage] = useState<string | null>(null);
-
-    const needsOptions = [
-        "New website",
-        "Website redesign",
-        "Additional pages",
-        "Booking system",
-        "Admin dashboard",
-        "Customer/staff accounts",
-        "Database",
-        "Email automation",
-        "Other",
-    ];
 
     function handleInputChange(
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -98,7 +110,7 @@ export default function BookingSection() {
     return (
         <section className="relative w-full flex flex-col bg-black bg-linear-to-br from-zinc-100/80 via-zinc-200/80 to-slate-300/80">
             <div className="p-10 md:p-20 max-w-7xl w-full mx-auto">
-                <h2 className="text-5xl border-b-7 border-black text-black mx-auto text-center font-bold w-fit pb-3 mb-10">
+                <h2 className="text-5xl text-black mx-auto text-center font-bold w-fit pb-3 mb-10">
                     Request a Free Quote
                 </h2>
 
@@ -144,6 +156,7 @@ export default function BookingSection() {
                         <input
                             name="phone"
                             value={form.phone}
+                            type="tel"
                             onChange={handleInputChange}
                             className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
@@ -152,39 +165,19 @@ export default function BookingSection() {
                     <fieldset className="md:col-span-2">
                         <legend className="text-sm font-medium text-slate-700">What are you looking for?*</legend>
                         <div className="mt-3 flex flex-col md:flex-row gap-4">
-                            <label className="inline-flex items-center gap-2">
-                                <input
-                                    type="radio"
-                                    name="service"
-                                    value="essentials"
-                                    checked={form.service === "essentials"}
-                                    onChange={handleInputChange}
-                                    className="w-4 h-4"
-                                />
-                                Essentials website
-                            </label>
-                            <label className="inline-flex items-center gap-2">
-                                <input
-                                    type="radio"
-                                    name="service"
-                                    value="custom"
-                                    checked={form.service === "custom"}
-                                    onChange={handleInputChange}
-                                    className="w-4 h-4"
-                                />
-                                Custom website / web app
-                            </label>
-                            <label className="inline-flex items-center gap-2">
-                                <input
-                                    type="radio"
-                                    name="service"
-                                    value="not-sure"
-                                    checked={form.service === "not-sure"}
-                                    onChange={handleInputChange}
-                                    className="w-4 h-4"
-                                />
-                                Not sure
-                            </label>
+                            {serviceOptions.map((service) => (
+                                <label key={service.value} className="inline-flex items-center gap-2">
+                                    <input
+                                        type="radio"
+                                        name="service"
+                                        value={service.value}
+                                        checked={form.service === service.value}
+                                        onChange={handleInputChange}
+                                        className="w-4 h-4"
+                                    />
+                                    {service.label}
+                                </label>
+                            ))}
                         </div>
                     </fieldset>
 
@@ -212,6 +205,8 @@ export default function BookingSection() {
                         <input
                             name="website"
                             value={form.website}
+                            type="url"
+                            placeholder="https://..."
                             onChange={handleInputChange}
                             className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
@@ -231,50 +226,19 @@ export default function BookingSection() {
                     <fieldset className="md:col-span-2">
                         <legend className="text-sm font-medium text-slate-700">Approximate budget</legend>
                         <div className="mt-3 flex flex-wrap gap-4">
-                            <label className="inline-flex items-center gap-2">
-                                <input
-                                    type="radio"
-                                    name="budget"
-                                    value="300-500"
-                                    checked={form.budget === "300-500"}
-                                    onChange={handleInputChange}
-                                    className="w-4 h-4"
-                                />
-                                <span className="text-sm">£300–£500</span>
-                            </label>
-                            <label className="inline-flex items-center gap-2">
-                                <input
-                                    type="radio"
-                                    name="budget"
-                                    value="500-1000"
-                                    checked={form.budget === "500-1000"}
-                                    onChange={handleInputChange}
-                                    className="w-4 h-4"
-                                />
-                                <span className="text-sm">£500–£1,000</span>
-                            </label>
-                            <label className="inline-flex items-center gap-2">
-                                <input
-                                    type="radio"
-                                    name="budget"
-                                    value="1000+"
-                                    checked={form.budget === "1000+"}
-                                    onChange={handleInputChange}
-                                    className="w-4 h-4"
-                                />
-                                <span className="text-sm">£1,000+</span>
-                            </label>
-                            <label className="inline-flex items-center gap-2">
-                                <input
-                                    type="radio"
-                                    name="budget"
-                                    value="not-sure"
-                                    checked={form.budget === "not-sure"}
-                                    onChange={handleInputChange}
-                                    className="w-4 h-4"
-                                />
-                                <span className="text-sm">Not sure</span>
-                            </label>
+                            {budgetOptions.map((b) => (
+                                <label key={b.value} className="inline-flex items-center gap-2">
+                                    <input
+                                        type="radio"
+                                        name="budget"
+                                        value={b.value}
+                                        checked={form.budget === b.value}
+                                        onChange={handleInputChange}
+                                        className="w-4 h-4"
+                                    />
+                                    <span className="text-sm">{b.label}</span>
+                                </label>
+                            ))}
                         </div>
                     </fieldset>
 

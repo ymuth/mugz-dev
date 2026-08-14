@@ -56,7 +56,7 @@ export default function ServicesSection() {
 
                 <div className="p-10 md:p-20 max-w-7xl w-full mx-auto">
 
-                    <h1 className="text-5xl border-b-7 border-black text-black mx-auto text-center font-bold w-fit pb-3 mb-10 ">What we offer</h1>
+                    <h1 className="text-5xl text-black mx-auto text-center font-bold w-fit pb-3 mb-10 ">What we offer</h1>
 
                     <div className="flex flex-col mx-auto max-w-7xl w-full my-auto">
 

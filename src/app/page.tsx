@@ -16,9 +16,21 @@ export default function Home() {
   );
 }
 
+
+
+// TODO:
+// 
+
+// TODO:
+// Hero — what Mugz.Dev does + CTA. DONE
+// Services — Essentials + Custom Solutions.
+// How It Works — this is especially important because you're selling a service.
+// Work / portfolio — eventually client work; initially you can show the detailing site and other genuine projects as examples.
+// FAQ
+// Quote/contact form
+
 // TODO: Add server-side rate-limiting and stronger validation
 // - Implement a simple in-memory rate limiter or Redis-backed limiter for `/api/send-email`.
-//   Make it configurable via environment (e.g. REDIS_URL) and tuneable (requests per minute, burst).
 // - Add stricter validation rules server-side:
 //   - `name`: required, min 2 chars, max 100 chars
 //   - `email`: required, robust email validation
@@ -27,4 +39,3 @@ export default function Home() {
 //   - `budget`: optional, must be one of predefined options
 //   - `service`: required, must be one of allowed enums
 //   - `needs`: optional array; validate against allowed list
-// - Consider CAPTCHA or abuse-detection alongside rate limiting, and add structured logging/monitoring.

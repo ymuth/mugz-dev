@@ -42,7 +42,10 @@ export default function NavBar() {
             <div className={`flex w-full fixed z-20 items-center justify-between transition-all ${scrolled ? "py-2" : "py-6"}  px-6 bg-white`}>
 
                 <div className={`font-extrabold transition-all ${scrolled ? "text-xl" : "text-2xl"}`}>
-                    <Link className="uppercase" href={"/"} onClick={() => setOpen(false)}>{siteConfig.businessName}</Link>
+                    <Link className="uppercase flex items-center gap-2" href={"/"} onClick={() => setOpen(false)}>
+                        <img src="/icon.svg" alt={siteConfig.businessName} className="h-8 w-8" />
+                        <span>{siteConfig.businessName}</span>
+                    </Link>
                 </div>
 
 
