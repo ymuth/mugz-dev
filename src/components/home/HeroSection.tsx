@@ -1,6 +1,6 @@
 import Image from "next/image"
-import Link from "next/link"
 import Hero from "@public/images/laptop-code.jpg"
+import ScrollLink from "../ui/ScrollLink"
 
 export default function HeroSection() {
 
@@ -35,18 +35,18 @@ export default function HeroSection() {
                         Fast, responsive and professional web apps built around your business.
                     </h2>
                     <div className="w-full font-semibold flex justify-center gap-4 text-center">
-                        <Link
-                            href="#services"
+                        <ScrollLink
+                            target="services"
                             className="p-4  shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
                         >
                             What we Offer
-                        </Link>
-                        <Link
-                            href="#Contact"
+                        </ScrollLink>
+                        <ScrollLink
+                            target="contact"
                             className="p-4  shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
                         >
                             Get a Free Quote!
-                        </Link>
+                        </ScrollLink>
                     </div>
 
                 </div>

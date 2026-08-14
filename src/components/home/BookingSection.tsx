@@ -108,7 +108,7 @@ export default function BookingSection() {
     }
 
     return (
-        <section className="relative w-full flex flex-col bg-black bg-linear-to-br from-zinc-100/80 via-zinc-200/80 to-slate-300/80">
+        <section className="relative w-full flex flex-col bg-linear-to-br from-zinc-100 via-zinc-200 to-slate-300">
             <div className="p-10 md:p-20 max-w-7xl w-full mx-auto">
                 <h2 className="text-5xl text-black mx-auto text-center font-bold w-fit pb-3 mb-10">
                     Request a Free Quote

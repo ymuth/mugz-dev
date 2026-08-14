@@ -2,14 +2,16 @@ import Image from "next/image";
 import HeroSection from "../components/home/HeroSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import BookingSection from "@/components/home/BookingSection";
+import ExplainSection from "@/components/home/ExplainSection";
 
 export default function Home() {
   return (
     <div className="flex flex-col flex-1">
-      
+
 
       <HeroSection />
       <section id="services"><ServicesSection /></section>
+      <section id="explanation"><ExplainSection /></section>
       <section id="contact"><BookingSection /></section>
 
     </div>

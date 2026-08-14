@@ -1,6 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
-import FadeIn from "../ui/fadeIn"
+import FadeIn from "../ui/FadeIn"
+import ScrollLink from "../ui/ScrollLink"
 
 
 const cards = [{
@@ -99,12 +98,12 @@ export default function ServicesSection() {
 
                         </div>
 
-                        <Link
-                            href="#contact"
+                        <ScrollLink
+                            target="contact"
                             className="p-4 shadow-lg mx-auto text-center mt-10 font-semibold text-white rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 transition-opacity hover:opacity-90"
                         >
                             Get a Free Quote!
-                        </Link>
+                        </ScrollLink>
 
 
                     </div>
