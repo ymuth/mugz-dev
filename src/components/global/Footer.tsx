@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrollLink from "../ui/ScrollLink";
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { siteConfig } from "@/lib/siteConfig";
@@ -16,17 +17,17 @@ export default function Footer() {
                 <div className="flex flex-col text-slate-700">
                     <h1 className="text-black font-semibold">Routes</h1>
                     <Link className="hover:underline" href="/">Home</Link>
-                    <Link className="hover:underline" href="/about">About</Link>
-                    <Link className="hover:underline" href="/services">Services</Link>
-                    <Link className="hover:underline" href="/contact">Contact</Link>
+                    <Link className="hover:underline line-through" href="/about">About</Link>
+                    <Link className="hover:underline line-through" href="/services">Services</Link>
+                    <Link className="hover:underline line-through" href="/contact">Contact</Link>
                 </div>
 
                 <div className="flex flex-col text-slate-700">
                     <h1 className="text-black font-semibold">Resources</h1>
-                    <Link className="hover:underline" href="#services">Options</Link>
-                    <Link className="hover:underline" href="#explaination">How it Works</Link>
-                    <Link className="hover:underline" href="#FAQ">FAQ</Link>
-                    <Link className="hover:underline" href="/services/#booking">Get a Quote</Link>
+                    <ScrollLink className="hover:underline text-left" target="services">Services</ScrollLink>
+                    <ScrollLink className="hover:underline text-left" target="explanation">How it Works</ScrollLink>
+                    <ScrollLink className="hover:underline text-left" target="FAQ">FAQ</ScrollLink>
+                    <ScrollLink className="hover:underline text-left" target="quote">Get Started</ScrollLink>
                 </div>
 
                 <div className="flex flex-col justify-between gap-3 text-center text-3xl">
@@ -44,7 +45,7 @@ export default function Footer() {
 
                 </div>
             </div>
-            <div className="flex flex-col w-full mx-auto mt-3 text-center gap-1 font-light">
+            <div className="flex flex-col w-full mx-auto m-2 text-center gap-1 font-light">
                 <h1>© {new Date().getFullYear()} {siteConfig.businessName} - All rights reserved.</h1>
                 {/* <Link href="/signin" className="font-light hover:font-normal hover:underline w-fit mx-auto">Admin sign in</Link> */}
 

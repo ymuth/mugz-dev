@@ -14,7 +14,7 @@ export default function Home() {
       <section id="services"><ServicesSection /></section>
       <section id="explanation"><ExplainSection /></section>
       <section id="FAQ"><FAQSection /></section>
-      <section id="contact"><BookingSection /></section>
+      <section id="quote"><BookingSection /></section>
 
     </div>
   );
@@ -23,12 +23,8 @@ export default function Home() {
 
 
 // TODO:
-// Hero — what Mugz.Dev does + CTA. DONE
-// Services — Essentials + Custom Solutions.
-// How It Works — this is especially important because you're selling a service.
 // Work / portfolio — eventually client work; initially you can show the detailing site and other genuine projects as examples.
-// FAQ
-// Quote/contact form
+
 
 // TODO: Add server-side rate-limiting and stronger validation
 // - Implement a simple in-memory rate limiter or Redis-backed limiter for `/api/send-email`.
