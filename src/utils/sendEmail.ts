@@ -8,7 +8,7 @@ if (!process.env.RESEND_API_KEY) {
 const resend = new Resend(process.env.RESEND_API_KEY);
 const recipient = siteConfig.businessEmail;
 
-export type BookingForm = {
+export type QuoteForm = {
     name: string;
     business?: string;
     email: string;
@@ -20,7 +20,7 @@ export type BookingForm = {
     budget?: string;
 };
 
-export async function sendBookingEmail(data: BookingForm) {
+export async function sendQuoteEmail(data: QuoteForm) {
     if (!recipient) throw new Error("Recipient email not configured");
 
     const escapeHtml = (s: string | undefined) =>

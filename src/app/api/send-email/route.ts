@@ -1,8 +1,30 @@
 import { NextResponse } from "next/server";
-import { sendBookingEmail, BookingForm } from "@/utils/sendEmail";
+import { sendQuoteEmail, QuoteForm } from "@/utils/sendEmail";
 
-const serviceOptions = ["essentials", "custom", "not-sure"] as const;
-const budgetOptions = ["under-500", "500-1000", "1000+", "not-sure"] as const;
+const serviceOptions = [
+  "essentials",
+  "custom",
+  "not-sure",
+] as const;
+
+const budgetOptions = [
+  "under-500",
+  "500-1000",
+  "1000+",
+  "not-sure",
+] as const;
+
+const needsOptions = [
+  "New website",
+  "Website redesign",
+  "Additional pages",
+  "Booking system",
+  "Admin dashboard",
+  "Customer/staff accounts",
+  "Database",
+  "Email automation",
+  "Other",
+] as const;
 
 export async function POST(req: Request) {
   try {
@@ -17,24 +39,58 @@ export async function POST(req: Request) {
 
     const raw = body as Record<string, unknown>;
 
+    // Honeypot
+    if (
+      typeof raw.companyWebsite === "string" &&
+      raw.companyWebsite.trim()
+    ) {
+      return NextResponse.json({ success: true });
+    }
+
     const name = String(raw.name ?? "").trim();
     const email = String(raw.email ?? "").trim();
     const message = String(raw.message ?? "").trim();
 
-    const service = serviceOptions.includes(
-      raw.service as (typeof serviceOptions)[number]
-    )
-      ? (raw.service as (typeof serviceOptions)[number])
-      : "not-sure";
+    const service =
+      typeof raw.service === "string" &&
+        serviceOptions.includes(
+          raw.service as (typeof serviceOptions)[number]
+        )
+        ? (raw.service as (typeof serviceOptions)[number])
+        : null;
 
-    const budget = budgetOptions.includes(
-      raw.budget as (typeof budgetOptions)[number]
-    )
-      ? (raw.budget as (typeof budgetOptions)[number])
-      : undefined;
+    const budget =
+      typeof raw.budget === "string" &&
+        budgetOptions.includes(
+          raw.budget as (typeof budgetOptions)[number]
+        )
+        ? (raw.budget as (typeof budgetOptions)[number])
+        : undefined;
 
-    const data: BookingForm = {
+    const needs = Array.isArray(raw.needs)
+      ? [
+        ...new Set(
+          raw.needs.filter(
+            (value): value is (typeof needsOptions)[number] =>
+              typeof value === "string" &&
+              needsOptions.includes(
+                value as (typeof needsOptions)[number]
+              )
+          )
+        ),
+      ].slice(0, needsOptions.length)
+      : [];
+
+    if (!service) {
+      return NextResponse.json(
+        { error: "Invalid service" },
+        { status: 400 }
+      );
+    }
+
+    const data: QuoteForm = {
       name,
+
       business:
         typeof raw.business === "string"
           ? raw.business.trim()
@@ -49,11 +105,7 @@ export async function POST(req: Request) {
 
       service,
 
-      needs: Array.isArray(raw.needs)
-        ? raw.needs
-            .filter((value): value is string => typeof value === "string")
-            .slice(0, 20)
-        : [],
+      needs,
 
       website:
         typeof raw.website === "string"
@@ -73,7 +125,22 @@ export async function POST(req: Request) {
       );
     }
 
-    // Length limits
+    // Minimum lengths
+    if (data.name.length < 2) {
+      return NextResponse.json(
+        { error: "Name must be at least 2 characters" },
+        { status: 400 }
+      );
+    }
+
+    if (data.message.length < 10) {
+      return NextResponse.json(
+        { error: "Please provide a little more information about your project" },
+        { status: 400 }
+      );
+    }
+
+    // Maximum lengths
     if (
       data.name.length > 100 ||
       data.email.length > 254 ||
@@ -98,9 +165,22 @@ export async function POST(req: Request) {
       );
     }
 
-    await sendBookingEmail(data);
+    // Website URL
+    if (data.website) {
+      try {
+        new URL(data.website);
+      } catch {
+        return NextResponse.json(
+          { error: "Invalid website URL" },
+          { status: 400 }
+        );
+      }
+    }
+
+    await sendQuoteEmail(data);
 
     return NextResponse.json({ success: true });
+
   } catch (error) {
     console.error("send-email error:", error);
 

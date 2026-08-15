@@ -26,7 +26,8 @@ const needsOptions = [
     "Database",
     "Email automation",
     "Other",
-];
+] as const;
+type NeedOption = typeof needsOptions[number];
 
 interface FormData {
     name: string;
@@ -34,10 +35,11 @@ interface FormData {
     email: string;
     phone: string;
     service: ServiceOption;
-    needs: string[];
+    needs: NeedOption[];
     website?: string;
     message: string;
     budget?: BudgetOption;
+    companyWebsite: string; // honey pot
 }
 
 // The form will POST to the server API at /api/send-email
@@ -53,6 +55,7 @@ export default function QuoteSection() {
         website: "",
         message: "",
         budget: undefined,
+        companyWebsite: "", // honey pot
     });
     const [submitting, setSubmitting] = useState(false);
     const [statusMessage, setStatusMessage] = useState<string | null>(null);
@@ -62,10 +65,12 @@ export default function QuoteSection() {
     ) {
         const { name, value, type, checked } = e.target as HTMLInputElement;
         if (type === "checkbox" && name === "needs") {
+            const need = value as NeedOption;
+
             setForm((prev) => {
                 const next = new Set(prev.needs);
-                if (checked) next.add(value);
-                else next.delete(value);
+                if (checked) next.add(need);
+                else next.delete(need);
                 return { ...prev, needs: Array.from(next) };
             });
             return;
@@ -85,7 +90,17 @@ export default function QuoteSection() {
                 body: JSON.stringify(form),
             });
 
-            if (!res.ok) throw new Error('Network response was not ok');
+            if (res.status === 429) {
+                throw new Error(
+                    "Too many requests. Please wait a few minutes and try again."
+                );
+            }
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || "Failed to send request");
+            }
 
             setStatusMessage("Request sent. We'll be in touch soon.");
             setForm({
@@ -98,10 +113,15 @@ export default function QuoteSection() {
                 website: "",
                 message: "",
                 budget: undefined,
+                companyWebsite: "", //honey pot
             });
         } catch (err) {
             console.error(err);
-            setStatusMessage("Failed to send request. Please try again later.");
+            setStatusMessage(
+                err instanceof Error
+                    ? err.message
+                    : "Failed to send request. Please try again later."
+            );
         } finally {
             setSubmitting(false);
         }
@@ -110,10 +130,10 @@ export default function QuoteSection() {
     return (
         <section className="relative overflow-x-clip w-full flex flex-col bg-zinc-950 text-white">
 
-                <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/20 blur-3xl" />
-                <div className="absolute right-20 bottom-50 size-96 rounded-full bg-purple-500/20 blur-3xl" />
-                <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/20 blur-3xl" />
-                <div className="absolute -left-40 top-30 size-96 rounded-full bg-teal-500/20 blur-3xl" />
+            <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/20 blur-3xl" />
+            <div className="absolute right-20 bottom-50 size-96 rounded-full bg-purple-500/20 blur-3xl" />
+            <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/20 blur-3xl" />
+            <div className="absolute -left-40 top-30 size-96 rounded-full bg-teal-500/20 blur-3xl" />
 
             <div className="relative z-10 mx-auto w-full max-w-7xl px-10 py-20 md:px-20">
 
@@ -142,6 +162,9 @@ export default function QuoteSection() {
                             value={form.name}
                             onChange={handleInputChange}
                             required
+                            autoComplete="name"
+                            minLength={2}
+                            maxLength={100}
                             className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
                     </label>
@@ -151,7 +174,10 @@ export default function QuoteSection() {
                         <input
                             name="business"
                             value={form.business}
+                            autoComplete="off"
+                            data-bwignore="true"
                             onChange={handleInputChange}
+                            maxLength={150}
                             className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
                     </label>
@@ -162,8 +188,10 @@ export default function QuoteSection() {
                             name="email"
                             type="email"
                             value={form.email}
+                            maxLength={254}
                             onChange={handleInputChange}
                             required
+                            autoComplete="email"
                             className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
                     </label>
@@ -174,7 +202,9 @@ export default function QuoteSection() {
                             name="phone"
                             value={form.phone}
                             type="tel"
+                            autoComplete="tel"
                             onChange={handleInputChange}
+                            maxLength={50}
                             className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
                     </label>
@@ -225,6 +255,7 @@ export default function QuoteSection() {
                             type="url"
                             placeholder="https://..."
                             onChange={handleInputChange}
+                            maxLength={500}
                             className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
                         />
                     </label>
@@ -240,6 +271,18 @@ export default function QuoteSection() {
                         />
                     </label>
 
+                    {/* Honey pot */}
+                    <input
+                        type="text"
+                        name="companyWebsite"
+                        value={form.companyWebsite}
+                        onChange={handleInputChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        className="absolute left-[-9999px]"
+                    />
+
                     <fieldset className="md:col-span-2">
                         <legend className="text-sm font-medium text-slate-700">Approximate budget</legend>
                         <div className="mt-3 flex flex-wrap gap-4">
@@ -251,6 +294,8 @@ export default function QuoteSection() {
                                         value={b.value}
                                         checked={form.budget === b.value}
                                         onChange={handleInputChange}
+                                        minLength={10}
+                                        maxLength={5000}
                                         className="w-4 h-4"
                                     />
                                     <span className="text-sm">{b.label}</span>
