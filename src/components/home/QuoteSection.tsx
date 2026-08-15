@@ -42,7 +42,7 @@ interface FormData {
 
 // The form will POST to the server API at /api/send-email
 
-export default function BookingSection() {
+export default function QuoteSection() {
     const [form, setForm] = useState<FormData>({
         name: "",
         business: "",

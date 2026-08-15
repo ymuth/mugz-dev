@@ -24,16 +24,16 @@ export async function sendBookingEmail(data: BookingForm) {
     if (!recipient) throw new Error("Recipient email not configured");
 
     const escapeHtml = (s: string | undefined) =>
-      (s ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/\"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        (s ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#039;");
 
     const needsHtml = data.needs && data.needs.length
-      ? `<ul>${data.needs.map((n) => `<li>${escapeHtml(n)}</li>`).join("")}</ul>`
-      : "<p>None specified</p>";
+        ? `<ul>${data.needs.map((n) => `<li>${escapeHtml(n)}</li>`).join("")}</ul>`
+        : "<p>None specified</p>";
 
     const html = `
         <h2>New Quote Request</h2>
@@ -49,7 +49,7 @@ export async function sendBookingEmail(data: BookingForm) {
         <p>${escapeHtml(data.message)}</p>
     `;
 
-    const res = await resend.emails.send({
+    const { data: res, error } = await resend.emails.send({
         from: siteConfig.from ?? "Mugz <hello@mugz.dev>",
         to: recipient,
         replyTo: data.email,
@@ -57,11 +57,13 @@ export async function sendBookingEmail(data: BookingForm) {
         html,
     });
 
-    // Resend SDK typically throws on failure. Some SDK responses may not include
-    // an `id` field depending on version — treat a truthy response as success.
+    if (error) {
+        throw new Error(error.message);
+    }
+
     if (!res) {
-      console.error('Resend returned falsy response', res);
-      throw new Error("Failed to send email");
+        console.error('Resend returned falsy response', res);
+        throw new Error("Failed to send email");
     }
 
     return { success: true };

@@ -31,9 +31,14 @@ export default function HeroSection() {
                     <h1 className="lg:text-9xl md:text-7xl text-5xl text-shadow-lg font-bold border-b-3 p-5 pb-8 text-center">
                         Mugz.Dev
                     </h1>
-                    <h2 className="lg:text-3xl md:text-2xl  text-shadow-lg text-xl p-5 text-center">
-                        Fast, responsive and professional web apps built around your business.
-                    </h2>
+                    <div className="p-5 text-center">
+                        <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-shadow-lg">
+                            Built to Perform. Designed to Impress.
+                        </h2>
+                        <p className="lg:text-2xl md:text-xl text-lg text-shadow-lg">
+                            Websites and apps made around your business.
+                        </p>
+                    </div>
                     <div className="w-full font-semibold flex justify-center gap-4 text-center">
                         <ScrollLink
                             target="services"
