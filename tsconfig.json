@@ -22,6 +22,7 @@
       "@/*": ["./src/*"],
       "@prisma-db": ["./prisma/db"],
       "@public/*": ["./public/*"],
+      "@types/*": ["./src/types/*"],
     }
   },
   "include": [
