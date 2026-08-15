@@ -55,7 +55,22 @@ export default function ServicesSection() {
 
                 <div className="p-10 md:p-20 max-w-7xl w-full mx-auto">
 
-                    <h1 className="text-5xl text-black mx-auto text-center font-bold w-fit pb-3 mb-10 ">What we offer</h1>
+                    <div className="mx-auto mb-12 max-w-3xl text-center">
+                        <p className="mb-3 font-semibold uppercase tracking-widest text-purple-600">
+                            Services
+                        </p>
+
+                        <h2 className="text-4xl font-bold text-black md:text-5xl">
+                            What we offer
+                        </h2>
+
+                        <p className="mt-5 text-lg text-zinc-700">
+                            Flexible website solutions built around your business,
+                            whether you need a strong online presence or something more advanced.
+                        </p>
+                    </div>
+
+
 
                     <div className="flex flex-col mx-auto max-w-7xl w-full my-auto">
 
@@ -67,13 +82,13 @@ export default function ServicesSection() {
                                     <div className="flex h-full flex-col">
                                         <div className="bg-white shadow-2xl h-full p-6 gap-5 flex flex-col rounded-2xl">
 
-                                            <h2 className="lg:text-3xl md:text-2xl text-xl font-extrabold w-full">
+                                            <h3 className="lg:text-3xl md:text-2xl text-xl font-extrabold w-full">
                                                 {card.title}
-                                            </h2>
-
-                                            <h3 className="lg:text-lg md:text-lg font-bold text-md w-full">
-                                                {card.subtitle}
                                             </h3>
+
+                                            <h4 className="lg:text-lg md:text-lg font-bold text-md w-full">
+                                                {card.subtitle}
+                                            </h4>
 
                                             <p className="lg:text-md md:text-md font-semibold text-md w-full">
                                                 {card.description}

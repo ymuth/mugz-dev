@@ -108,15 +108,32 @@ export default function BookingSection() {
     }
 
     return (
-        <section className="relative w-full flex flex-col bg-linear-to-br from-zinc-100 via-zinc-200 to-slate-300">
-            <div className="p-10 md:p-20 max-w-7xl w-full mx-auto">
-                <h2 className="text-5xl text-black mx-auto text-center font-bold w-fit pb-3 mb-10">
-                    Request a Free Quote
-                </h2>
+        <section className="relative overflow-x-clip w-full flex flex-col bg-zinc-950 text-white">
+
+                <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/20 blur-3xl" />
+                <div className="absolute right-20 bottom-50 size-96 rounded-full bg-purple-500/20 blur-3xl" />
+                <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/20 blur-3xl" />
+                <div className="absolute -left-40 top-30 size-96 rounded-full bg-teal-500/20 blur-3xl" />
+
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-10 py-20 md:px-20">
+
+                <div className="mb-12 text-center">
+                    <p className="mb-3 font-semibold uppercase tracking-widest text-purple-400">
+                        Get Started
+                    </p>
+
+                    <h2 className="text-4xl font-bold md:text-5xl">
+                        Let's build something.
+                    </h2>
+
+                    <p className="mx-auto mt-5 max-w-2xl text-zinc-300">
+                        Tell us about your project and we'll get back to you with the next steps.
+                    </p>
+                </div>
 
                 <form
                     onSubmit={handleSubmit}
-                    className="max-w-3xl text-black mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-2xl shadow-2xl"
+                    className="mx-auto max-w-3xl bg-white text-black grid grid-cols-1 md:grid-cols-2 gap-6 p-8 rounded-2xl shadow-2xl"
                 >
                     <label className="flex flex-col">
                         <span className="text-sm font-medium text-slate-700">Name*</span>
