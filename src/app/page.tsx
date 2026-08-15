@@ -23,7 +23,6 @@ export default function Home() {
 
 
 // TODO:
-// Make the confirmation in a green border and box and for errors red
 // Make the email response look nicer, html
 // When replying to customer see if you can remove the the html display that the business was sent first.
 // MAYBE? send an email to customer confirming we've recieved an email?
@@ -32,13 +31,3 @@ export default function Home() {
 // Work / portfolio — eventually client work; initially you can show the detailing site and other genuine projects as examples.
 
 
-// TODO: Add server-side rate-limiting and stronger validation
-// - Implement a simple in-memory rate limiter or Redis-backed limiter for `/api/send-email`.
-// - Add stricter validation rules server-side:
-//   - `name`: required, min 2 chars, max 100 chars
-//   - `email`: required, robust email validation
-//   - `message`: required, min 10 chars
-//   - `website`: optional, validate URL format
-//   - `budget`: optional, must be one of predefined options
-//   - `service`: required, must be one of allowed enums
-//   - `needs`: optional array; validate against allowed list

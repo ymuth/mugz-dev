@@ -59,6 +59,7 @@ export default function QuoteSection() {
     });
     const [submitting, setSubmitting] = useState(false);
     const [statusMessage, setStatusMessage] = useState<string | null>(null);
+    const [statusType, setStatusType] = useState<"success" | "error" | null>(null);
 
     function handleInputChange(
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -103,6 +104,7 @@ export default function QuoteSection() {
             }
 
             setStatusMessage("Request sent. We'll be in touch soon.");
+            setStatusType("success");
             setForm({
                 name: "",
                 business: "",
@@ -122,6 +124,8 @@ export default function QuoteSection() {
                     ? err.message
                     : "Failed to send request. Please try again later."
             );
+            setStatusType("success");
+
         } finally {
             setSubmitting(false);
         }
@@ -314,7 +318,17 @@ export default function QuoteSection() {
                         </button>
                     </div>
 
-                    {statusMessage && <p className="md:col-span-2 text-center italic mt-2">{statusMessage}</p>}
+                    {statusMessage && (
+                        <div
+                            className={`md:col-span-2 rounded-lg border p-4 text-center text-sm font-medium ${statusType === "success"
+                                ? "border-green-300 bg-green-50 text-green-800"
+                                : "border-red-300 bg-red-50 text-red-800"
+                                }`}
+                        >
+                            {statusMessage}
+                        </div>
+                    )}
+                    
                 </form>
             </div>
         </section>
