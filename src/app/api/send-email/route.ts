@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { sendQuoteEmail, QuoteForm } from "@/utils/sendEmail";
+import { sendConfirmationEmail, sendQuoteEmail } from "@/utils/sendEmail";
+import { QuoteForm } from "@/types/quote"
 
 const serviceOptions = [
   "essentials",
@@ -178,6 +179,12 @@ export async function POST(req: Request) {
     }
 
     await sendQuoteEmail(data);
+    
+    try {
+      await sendConfirmationEmail(data);
+    } catch (error) {
+      console.error("Failed to send quote confirmation:", error);
+    }
 
     return NextResponse.json({ success: true });
 

@@ -23,8 +23,6 @@ export default function Home() {
 
 
 // TODO:
-// Make the email response look nicer, html
-// When replying to customer see if you can remove the the html display that the business was sent first.
 // MAYBE? send an email to customer confirming we've recieved an email?
 
 // TODO:

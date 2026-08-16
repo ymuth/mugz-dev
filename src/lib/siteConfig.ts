@@ -2,7 +2,7 @@ export const siteConfig = {
   businessName: "Mugz.Dev",
   businessEmail: "hello@mugz.dev",
   businessPhone: "TODO",
-  from: "Mugz <hello@mugz.dev>",
+  from: "Mugz.Dev <hello@mugz.dev>",
   googleReviewLink: "https://g.page/r/your-review-link/review",
   socials: {
     instagram: "https://instagram.com/",
