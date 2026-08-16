@@ -21,9 +21,11 @@ export default function Home() {
 }
 
 
-
-// TODO:
-// MAYBE? send an email to customer confirming we've recieved an email?
+// TODO: Create an About Page and Contact Page
+// TODO: Create the services page including:
+//       - Services offered (websites [essentails, custom], other custom software for internal managment etc)
+// TODO: Final touches; sitemap & robot, seo, other things like layout - opengraph metadata description etc;
+//       do i have to register with google etc. how do i get my website showing first
 
 // TODO:
 // Work / portfolio — eventually client work; initially you can show the detailing site and other genuine projects as examples.

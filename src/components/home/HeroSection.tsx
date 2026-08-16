@@ -47,7 +47,7 @@ export default function HeroSection() {
                             What we Offer
                         </ScrollLink>
                         <ScrollLink
-                            target="contact"
+                            target="quote"
                             className="p-4  shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
                         >
                             Get a Free Quote!
