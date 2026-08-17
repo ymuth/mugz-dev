@@ -13,7 +13,7 @@ if (!process.env.RESEND_API_KEY) {
 const resend = new Resend(process.env.RESEND_API_KEY);
 const businessEmail = siteConfig.businessEmail;
 
-
+// INTERNAL
 export async function sendQuoteEmail(data: QuoteForm) {
     if (!businessEmail) throw new Error("Business email not configured");
 
@@ -21,7 +21,7 @@ export async function sendQuoteEmail(data: QuoteForm) {
 
 
     const { data: res, error } = await resend.emails.send({
-        from: siteConfig.from ?? "Mugz <hello@mugz.dev>",
+        from: siteConfig.from_internal ?? "Mugz.Dev Forms <hello@mugz.dev>",
         to: businessEmail,
         replyTo: data.email,
         subject: `New Quote Request from ${data.name}`,
@@ -40,6 +40,7 @@ export async function sendQuoteEmail(data: QuoteForm) {
     return { success: true };
 }
 
+// EXTERNAL
 export async function sendConfirmationEmail(data: QuoteForm) {
     if (!businessEmail) throw new Error("Business email not configured");
 
@@ -66,6 +67,7 @@ export async function sendConfirmationEmail(data: QuoteForm) {
     return { success: true };
 }
 
+// INTERNAL
 export async function sendContactEmail(data: ContactForm) {
     if (!businessEmail) throw new Error("Business email not configured");
 
@@ -73,7 +75,7 @@ export async function sendContactEmail(data: ContactForm) {
 
 
     const { data: res, error } = await resend.emails.send({
-        from: siteConfig.from ?? "Mugz.Dev <hello@mugz.dev>",
+        from: siteConfig.from_internal ?? "Mugz.Dev Forms <hello@mugz.dev>",
         to: businessEmail,
         replyTo: data.email,
         subject: `New Enquiry from ${data.name}`,

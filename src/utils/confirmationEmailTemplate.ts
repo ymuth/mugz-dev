@@ -246,7 +246,6 @@ export function createConfirmationEmailHtml(data: QuoteForm) {
                         font-size:14px;
                         line-height:1.7;
                         color:#3f3f46;
-                        white-space:pre-wrap;
                     ">
                         ${escapeHtml(data.message)}
                     </div>

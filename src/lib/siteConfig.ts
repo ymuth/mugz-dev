@@ -3,6 +3,7 @@ export const siteConfig = {
   businessEmail: "hello@mugz.dev",
   businessPhone: "TODO",
   from: "Mugz.Dev <hello@mugz.dev>",
+  from_internal: "Mugz.Dev Forms <forms@mugz.dev>",
   googleReviewLink: "https://g.page/r/your-review-link/review",
   socials: {
     instagram: "https://instagram.com/",
