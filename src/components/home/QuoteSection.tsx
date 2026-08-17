@@ -148,11 +148,11 @@ export default function QuoteSection() {
                     </p>
 
                     <h2 className="text-4xl font-bold md:text-5xl">
-                        Let's build something.
+                        Let&apos;s build something.
                     </h2>
 
                     <p className="mx-auto mt-5 max-w-2xl text-zinc-300">
-                        Tell us about your project and we'll get back to you with the next steps.
+                        Tell us about your project and we&apos;ll get back to you with the next steps.
                     </p>
                 </div>
 

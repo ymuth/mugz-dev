@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/siteConfig";
+import Image from "next/image";
 // import { useSession, signOut } from "@/lib/client";
 // import { useRouter } from "next/navigation";
 
@@ -43,7 +44,7 @@ export default function NavBar() {
 
                 <div className={`font-extrabold transition-all ${scrolled ? "text-xl" : "text-2xl"}`}>
                     <Link className="uppercase flex items-center gap-2" href={"/"} onClick={() => setOpen(false)}>
-                        <img src="/icon.svg" alt={siteConfig.businessName +"logo"} className="h-8 w-8" />
+                        <Image src="/icon.svg" alt={siteConfig.businessName +"logo"} className="h-8 w-8" />
                         <span>{siteConfig.businessName}</span>
                     </Link>
                 </div>
