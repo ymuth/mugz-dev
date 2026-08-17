@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return (
-        <main className="w-full">
+        <main className="w-full mt-10">
 
             {/* Hero */}
             <section className="relative overflow-hidden bg-zinc-950 text-white">
@@ -24,8 +24,9 @@ export default function AboutPage() {
                         </h1>
 
                         <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-                            Mugz.Dev helps businesses build modern websites, applications
-                            and internal software designed around the way they actually work.
+                            Based in Sheffield, Mugz.Dev helps businesses across South Yorkshire
+                            and the UK build modern websites, applications and internal software
+                            designed around the way they actually work.
                         </p>
 
                     </div>
@@ -43,26 +44,25 @@ export default function AboutPage() {
                         </p>
 
                         <h2 className="text-3xl font-bold md:text-4xl">
-                            The lead developer behind the work.
+                            Commercial experience behind the work.
                         </h2>
                     </div>
 
                     <div className="space-y-5 text-lg leading-8 text-zinc-700">
                         <p>
-                            I&apos;m Yusaf, a software engineer with experience building websites,
-                            applications and internal management software for businesses.
+                            Mugz.Dev is led by software engineers with experience building websites, applications and internal management software for businesses.
                         </p>
 
                         <p>
-                            I&apos;ve previously worked with an advertising agency, developing internal
+                            That experience includes work with advertising agencies, developing internal
                             software used within the business alongside websites and applications
                             created for clients.
                         </p>
 
                         <p>
-                            That experience has given me exposure to both sides of software development —
-                            creating customer-facing products that need to look professional and perform
-                            well, and building internal systems designed to solve real operational problems.
+                            With experience spanning both customer-facing products
+                            and internal systems, ensuring each project is 
+                            built with both usability and real business needs in mind.
                         </p>
                     </div>
 

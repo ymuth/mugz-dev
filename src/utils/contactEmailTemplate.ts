@@ -158,7 +158,6 @@ export function createContactEmailHtml(data: ContactForm) {
                         font-size:15px;
                         line-height:1.7;
                         color:#3f3f46;
-                        white-space:pre-wrap;
                     ">
                         ${escapeHtml(data.message)}
                     </div>

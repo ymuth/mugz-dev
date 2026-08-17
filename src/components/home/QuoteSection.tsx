@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import React, { useState } from "react";
 
 const serviceOptions = [
@@ -318,6 +319,17 @@ export default function QuoteSection() {
                             {submitting ? "Sending…" : "Request a Free Quote"}
                         </button>
                     </div>
+                    <p className="md:col-span-2 text-center text-xs text-zinc-500">
+                        We&apos;ll use the information you provide to respond to your enquiry.
+                        See our{" "}
+                        <Link
+                            href="/privacy"
+                            className="font-medium underline hover:text-zinc-800"
+                        >
+                            Privacy Policy
+                        </Link>
+                        .
+                    </p>
 
                     {statusMessage && (
                         <div

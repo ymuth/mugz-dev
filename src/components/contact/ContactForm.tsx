@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 type ContactFormData = {
@@ -206,6 +207,18 @@ export default function ContactForm() {
                     {submitting ? "Sending…" : "Send Message"}
                 </button>
             </div>
+            
+            <p className="md:col-span-2 text-center text-xs text-zinc-500">
+                We&apos;ll use the information you provide to respond to your enquiry.
+                See our{" "}
+                <Link
+                    href="/privacy"
+                    className="font-medium underline hover:text-zinc-800"
+                >
+                    Privacy Policy
+                </Link>
+                .
+            </p>
 
 
             {/* Status */}

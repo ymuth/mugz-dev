@@ -3,7 +3,7 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export default function ContactPage() {
     return (
-        <main className="w-full">
+        <main className="w-full mt-10">
 
             {/* Hero */}
             <section className="relative overflow-hidden bg-zinc-950 text-white">
