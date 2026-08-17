@@ -235,7 +235,7 @@ export default function ServicesPage() {
                                     </p>
 
                                     <p className="mt-1 font-semibold text-zinc-700">
-                                        + from £38/month
+                                        + £38/month
                                     </p>
 
                                     <p className="mt-2 text-sm text-zinc-500">
