@@ -21,9 +21,9 @@ export default function Home() {
 }
 
 
-// TODO: Create an About Page and Contact Page
 // TODO: Create the services page including:
 //       - Services offered (websites [essentails, custom], other custom software for internal managment etc)
+// TODO: make seperate email for example form@mugz.dev so it doesnt say me on my mugz.dev, this is for the from part of email's sent to hello@mugz.dev.
 // TODO: Final touches; sitemap & robot, seo, other things like layout - opengraph metadata description etc;
 //       do i have to register with google etc. how do i get my website showing first
 
