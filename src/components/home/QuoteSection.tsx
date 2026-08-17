@@ -125,7 +125,7 @@ export default function QuoteSection() {
                     ? err.message
                     : "Failed to send request. Please try again later."
             );
-            setStatusType("success");
+            setStatusType("error");
 
         } finally {
             setSubmitting(false);
