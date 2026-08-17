@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ScrollLink from "../ui/ScrollLink";
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { siteConfig } from "@/lib/siteConfig";
@@ -24,10 +23,10 @@ export default function Footer() {
 
                 <div className="flex flex-col text-slate-700">
                     <h1 className="text-black font-semibold">Resources</h1>
-                    <ScrollLink className="hover:underline text-left" target="services">Services</ScrollLink>
-                    <ScrollLink className="hover:underline text-left" target="explanation">How it Works</ScrollLink>
-                    <ScrollLink className="hover:underline text-left" target="FAQ">FAQ</ScrollLink>
-                    <ScrollLink className="hover:underline text-left" target="quote">Get Started</ScrollLink>
+                    <Link className="hover:underline text-left" href="#services">Services</Link>
+                    <Link className="hover:underline text-left" href="#explanation">How it Works</Link>
+                    <Link className="hover:underline text-left" href="#FAQ">FAQ</Link>
+                    <Link className="hover:underline text-left" href="#quote">Get Started</Link>
                 </div>
 
                 <div className="flex flex-col justify-between gap-3 text-center text-3xl">
