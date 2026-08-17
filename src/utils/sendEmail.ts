@@ -2,7 +2,9 @@ import { Resend } from "resend";
 import { siteConfig } from "@/lib/siteConfig";
 import { createQuoteEmailHtml } from "./quoteEmailTemplate";
 import { createConfirmationEmailHtml } from "./confirmationEmailTemplate";
+import { createContactEmailHtml } from "./contactEmailTemplate";
 import type { QuoteForm } from "@/types/quote";
+import type { ContactForm } from "@/types/contact";
 
 if (!process.env.RESEND_API_KEY) {
     throw new Error("RESEND_API_KEY is not set in environment variables");
@@ -49,6 +51,32 @@ export async function sendConfirmationEmail(data: QuoteForm) {
         to: data.email,
         replyTo: businessEmail,
         subject: `"We've received your quote request | Mugz.Dev`,
+        html,
+    });
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    if (!res) {
+        console.error('Resend returned falsy response', res);
+        throw new Error("Failed to send email");
+    }
+
+    return { success: true };
+}
+
+export async function sendContactEmail(data: ContactForm) {
+    if (!businessEmail) throw new Error("Business email not configured");
+
+    const html = createContactEmailHtml(data);
+
+
+    const { data: res, error } = await resend.emails.send({
+        from: siteConfig.from ?? "Mugz.Dev <hello@mugz.dev>",
+        to: businessEmail,
+        replyTo: data.email,
+        subject: `New Enquiry from ${data.name}`,
         html,
     });
 

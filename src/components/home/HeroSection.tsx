@@ -41,16 +41,16 @@ export default function HeroSection() {
                     </div>
                     <div className="w-full font-semibold flex justify-center gap-4 text-center">
                         <ScrollLink
-                            target="services"
-                            className="p-4  shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
+                            target="quote"
+                            className="px-7 py-4 shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 transition-opacity hover:opacity-90"
                         >
-                            What we Offer
+                            Request a Free Quote
                         </ScrollLink>
                         <ScrollLink
-                            target="quote"
-                            className="p-4  shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
+                            target="services"
+                            className="px-7 py-4 shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
                         >
-                            Get a Free Quote!
+                            What we Offer
                         </ScrollLink>
                     </div>
 

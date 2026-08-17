@@ -283,6 +283,7 @@ export default function QuoteSection() {
                         onChange={handleInputChange}
                         tabIndex={-1}
                         autoComplete="off"
+                        data-bwignore="true"
                         aria-hidden="true"
                         className="absolute left-[-9999px]"
                     />
@@ -328,7 +329,7 @@ export default function QuoteSection() {
                             {statusMessage}
                         </div>
                     )}
-                    
+
                 </form>
             </div>
         </section>
