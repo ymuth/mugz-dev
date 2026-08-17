@@ -128,7 +128,13 @@ export default function Footer() {
                                 <span>hello@mugz.dev</span>
                             </a>
                         </div>
+
+                        <Link href="/privacy" className="text-zinc-600 hover:text-zinc-900">
+                            Privacy Policy
+                        </Link>
                     </div>
+
+
 
                 </div>
 
