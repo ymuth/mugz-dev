@@ -26,17 +26,17 @@ const cards = [{
     title: "Custom Solutions",
     subtitle: "For businesses that need more than a standard website.",
     description:
-        "Need something more advanced? We can build custom functionality around the way your business works, with pricing tailored to your requirements.",
+        "Need something more advanced? We can build custom websites, applications and business functionality around the way your business works.",
 
     features: [
         "Additional pages and custom sections",
-        "Database integration",
+        "Database-driven functionality",
         "Admin dashboards and content management",
-        "Secure user accounts and authentication",
+        "Secure customer and staff accounts",
         "Booking, enquiry and contact systems",
-        "Automated email functionality",
+        "Automated emails and notifications",
         "Custom forms and business workflows",
-        "Third-party service and API integrations",
+        "Supported third-party integrations",
     ],
 
     price: {
@@ -74,42 +74,103 @@ export default function ServicesSection() {
 
                     <div className="flex flex-col mx-auto max-w-7xl w-full my-auto">
 
-                        <div className="grid flex-1 md:grid-cols-2 gap-15 w-full  text-black">
+                        <div className="grid flex-1 w-full gap-10 text-black md:grid-cols-2">
 
+                            {cards.map((card, index) => {
+                                const isCustom = card.title === "Custom Solutions";
 
-                            {cards.map((card, index) => (
-                                <FadeIn key={card.title} delay={index * 0.3} delayMobile={0}>
-                                    <div className="flex h-full flex-col">
-                                        <div className="bg-white shadow-2xl h-full p-6 gap-5 flex flex-col rounded-2xl">
+                                return (
+                                    <FadeIn
+                                        key={card.title}
+                                        delay={index * 0.3}
+                                        delayMobile={0}
+                                    >
+                                        <div className="flex h-full flex-col">
+                                            <div
+                                                className={`flex h-full flex-col rounded-2xl border p-8 shadow-xl ${isCustom
+                                                    ? "border-zinc-700 bg-zinc-950 text-white"
+                                                    : "border-zinc-300 bg-white text-black"
+                                                    }`}
+                                            >
 
-                                            <h3 className="lg:text-3xl md:text-2xl text-xl font-extrabold w-full">
-                                                {card.title}
-                                            </h3>
+                                                <p
+                                                    className={`mb-2 text-sm font-semibold uppercase tracking-widest ${isCustom
+                                                        ? "text-teal-400"
+                                                        : "text-purple-600"
+                                                        }`}
+                                                >
+                                                    {card.title}
+                                                </p>
 
-                                            <h4 className="lg:text-lg md:text-lg font-bold text-md w-full">
-                                                {card.subtitle}
-                                            </h4>
+                                                <h3 className="text-xl font-bold md:text-2xl lg:text-3xl">
+                                                    {card.subtitle}
+                                                </h3>
 
-                                            <p className="lg:text-md md:text-md font-semibold text-md w-full">
-                                                {card.description}
-                                            </p>
+                                                <p
+                                                    className={`mt-4 leading-7 ${isCustom
+                                                        ? "text-zinc-300"
+                                                        : "text-zinc-600"
+                                                        }`}
+                                                >
+                                                    {card.description}
+                                                </p>
 
-                                            {/* <p>Including but not limited to:</p> */}
-                                            <ul className="lg:text-md md:text-md text-md pl-5 space-y-2 list-disc w-full">
-                                                {card.features.map((features, indexF) => (
-                                                    <li key={indexF}>{features}</li>
-                                                ))}
-                                            </ul>
+                                                <ul className="mt-8 space-y-3">
+                                                    {card.features.map((feature) => (
+                                                        <li
+                                                            key={feature}
+                                                            className={`flex gap-3 ${isCustom
+                                                                ? "text-zinc-300"
+                                                                : "text-zinc-700"
+                                                                }`}
+                                                        >
+                                                            <span
+                                                                className={`font-bold ${isCustom
+                                                                    ? "text-purple-400"
+                                                                    : "text-teal-600"
+                                                                    }`}
+                                                            >
+                                                                ✓
+                                                            </span>
 
-                                            <div className="mt-auto text-center italic font-semibold">
-                                                <p>{card.price.initial}</p>
-                                                <p>{card.price.monthly}</p>
+                                                            <span>{feature}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+
+                                                <div className="mt-auto pt-10">
+                                                    <div
+                                                        className={`border-t pt-6 ${isCustom
+                                                            ? "border-zinc-700"
+                                                            : "border-zinc-200"
+                                                            }`}
+                                                    >
+                                                        <p className="text-3xl font-bold">
+                                                            {card.price.initial}
+                                                        </p>
+
+                                                        <p
+                                                            className={`mt-1 font-semibold ${isCustom
+                                                                ? "text-zinc-300"
+                                                                : "text-zinc-700"
+                                                                }`}
+                                                        >
+                                                            {card.price.monthly}
+                                                        </p>
+
+                                                        {card.title === "Essentials" && (
+                                                            <p className="mt-2 text-sm text-zinc-500">
+                                                                Hosting, maintenance and support included.
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                </div>
+
                                             </div>
-
                                         </div>
-                                    </div>
-                                </FadeIn>
-                            ))}
+                                    </FadeIn>
+                                );
+                            })}
 
                         </div>
 

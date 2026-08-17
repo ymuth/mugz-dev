@@ -16,9 +16,9 @@ export default function Footer() {
                 <div className="flex flex-col text-slate-700">
                     <h1 className="text-black font-semibold">Routes</h1>
                     <Link className="hover:underline" href="/">Home</Link>
+                    <Link className="hover:underline" href="/services">Services</Link>
                     <Link className="hover:underline" href="/about">About</Link>
-                    <Link className="hover:underline line-through" href="/services">Services</Link>
-                    <Link className="hover:underline line-through" href="/contact">Contact</Link>
+                    <Link className="hover:underline" href="/contact">Contact</Link>
                 </div>
 
                 <div className="flex flex-col text-slate-700">
