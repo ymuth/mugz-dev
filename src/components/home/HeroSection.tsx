@@ -39,7 +39,7 @@ export default function HeroSection() {
                             Websites and apps made around your business.
                         </p>
                     </div>
-                    <div className="w-full font-semibold flex md:flex-row flex-col flex-col justify-center gap-4 text-center">
+                    <div className="w-full font-semibold flex md:flex-row flex-col justify-center gap-4 text-center">
                         <ScrollLink
                             target="quote"
                             className="px-7 py-4 shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 transition-opacity hover:opacity-90"
