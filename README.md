@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# mugz.dev
+
+The official website for **MUGZ Development**, a software and web development service focused on building modern, responsive and efficient websites for businesses.
+
+Unlike some of my more backend-focused projects, this site was developed with a stronger emphasis on **frontend design, user experience, performance and professional presentation** while still including secure server-side functionality for handling enquiries.
+
+## Features
+
+* Modern responsive website built with **Next.js**
+* Fully responsive layout across desktop, tablet and mobile devices
+* Custom UI built with **Tailwind CSS**
+* Server-side contact and enquiry forms
+* Transactional email delivery using **Resend**
+* Custom domain and professional email integration
+* Spam and bot protection using hidden honeypot fields
+* Server-side form validation
+* Secure handling of API keys and environment variables
+* Reusable React components
+* SEO-friendly page structure and metadata
+* Optimised assets and Next.js image handling
+* Production deployment with a custom domain
+
+## Tech Stack
+
+* **Next.js**
+* **React**
+* **TypeScript**
+* **Tailwind CSS**
+* **Resend**
+* **Vercel**
+
+No database is required for this project, as enquiry information is processed directly through the application's server-side functionality and delivered by email.
+
+## Contact Form & Email Integration
+
+The website includes custom enquiry forms designed to allow potential clients to contact MUGZ Development directly.
+
+Form submissions are processed on the server before being sent using **Resend**, preventing sensitive email credentials from being exposed to the browser.
+
+Emails are integrated with the project's custom domain, including the professional contact address:
+
+```text
+hello@mugz.dev
+```
+
+This provides a complete enquiry workflow without requiring a separate database or third-party form builder.
+
+## Spam Protection
+
+The contact forms include several measures designed to reduce automated and malicious submissions.
+
+These include:
+
+* Hidden **honeypot fields** which legitimate users do not interact with
+* Server-side input validation
+* Validation of required fields and email addresses
+* Rejection of suspicious or invalid submissions
+* API credentials stored securely through environment variables
+
+The honeypot approach provides lightweight bot protection without requiring users to complete a CAPTCHA.
+
+## Design & Frontend
+
+A major focus of this project was creating a clean, professional interface suitable for a real software and web development business.
+
+The site was designed around:
+
+* Clear visual hierarchy
+* Responsive layouts
+* Consistent spacing and typography
+* Reusable UI components
+* Simple navigation
+* Clear calls to action
+* Mobile usability
+* Fast page loading
+
+The interface was built from scratch using **React and Tailwind CSS** rather than relying on a pre-built website template.
+
+## Project Structure
+
+The project uses the **Next.js App Router**, allowing pages, layouts, components and server-side functionality to remain organised within a single application.
+
+Reusable components are used throughout the site to reduce duplicated code and maintain consistent styling.
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository and install the dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file containing the required environment variables:
+
+```env
+RESEND_API_KEY=
+```
+
+Additional email or deployment-related environment variables may be required depending on the configuration being used.
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Production
 
-## Learn More
+The application is deployed as a production website using a custom domain:
 
-To learn more about Next.js, take a look at the following resources:
+**[mugz.dev](https://mugz.dev)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The production deployment demonstrates the full process of taking a web application from local development through to a publicly accessible website with a custom domain and professional email infrastructure.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Purpose
 
-## Deploy on Vercel
+This project was created both as the website for **MUGZ Development** and as a demonstration of my frontend and full-stack web development skills.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project particularly demonstrates experience with:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Building production websites using Next.js and TypeScript
+* Responsive frontend development
+* Designing user interfaces with Tailwind CSS
+* Creating reusable React components
+* Building server-side form functionality
+* Integrating external APIs such as Resend
+* Implementing basic anti-spam and security measures
+* Managing environment variables and sensitive credentials
+* Configuring custom domains and production deployments
+
+While my other projects demonstrate more complex database, authentication and backend functionality, **mugz.dev focuses primarily on frontend quality, usability and delivering a polished production website**.
