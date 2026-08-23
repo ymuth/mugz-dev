@@ -114,7 +114,7 @@ http://localhost:3000
 
 The application is deployed as a production website using a custom domain:
 
-**[mugz.dev](https://mugz.dev)**
+**[mugz.dev](https://www.mugz.dev)**
 
 The production deployment demonstrates the full process of taking a web application from local development through to a publicly accessible website with a custom domain and professional email infrastructure.
 

@@ -7,10 +7,10 @@ import FAQSection from "@/components/home/FAQSection";
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://mugz.dev/#business",
+  "@id": "https://www.mugz.dev/#business",
 
   name: "Mugz.Dev",
-  url: "https://mugz.dev",
+  url: "https://www.mugz.dev",
   email: "hello@mugz.dev",
 
   description:

@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
         },
 
-        sitemap: "https://mugz.dev/sitemap.xml",
-        host: "https://mugz.dev",
+        sitemap: "https://www.mugz.dev/sitemap.xml",
+        host: "https://www.mugz.dev",
     };
 }

@@ -11,7 +11,7 @@ export const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mugz.dev"),
+  metadataBase: new URL("https://www.mugz.dev"),
 
   title: {
     default: "Mugz.Dev | Web Development & Custom Software Sheffield",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Mugz.Dev",
-      url: "https://mugz.dev",
+      url: "https://www.mugz.dev",
     },
   ],
 
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "Mugz.Dev | Web Development & Custom Software Sheffield",
     description:
       "Professional websites, applications and custom business software built around your business.",
-    url: "https://mugz.dev",
+    url: "https://www.mugz.dev",
   },
 
   twitter: {
