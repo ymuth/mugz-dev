@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PerformancePreview from "@public/images/apex-performance.png";
 import FadeIn from "../ui/FadeIn";
+import UpRightArrowIcon from "../ui/UpRightArrowIcon";
 
 function PerformanceVisual() {
   return (
@@ -98,9 +99,10 @@ export default function SelectedWorkSection() {
                       href={project.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-link mt-7 inline-flex"
+                      className="text-link mt-7 inline-flex items-center gap-2"
                     >
-                      View live demo <span aria-hidden="true">↗</span>
+                      View live demo
+                      <UpRightArrowIcon className="size-4 shrink-0" />
                     </Link>
                   )}
                 </div>

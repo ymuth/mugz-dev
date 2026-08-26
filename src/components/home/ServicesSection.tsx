@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FadeIn from "../ui/FadeIn";
+import UpRightArrowIcon from "../ui/UpRightArrowIcon";
 
 const services = [
   ["01", "Business Websites", "Professional responsive websites for businesses that need a stronger online presence.", "Design · Development · SEO foundations"],
@@ -33,7 +34,12 @@ export default function ServicesSection() {
             </FadeIn>
           ))}
         </div>
-        <div className="mt-10 flex justify-end"><Link href="/services" className="text-link">Explore all services <span aria-hidden="true">↗</span></Link></div>
+        <div className="mt-10 flex justify-end">
+          <Link href="/services" className="text-link inline-flex items-center gap-2">
+            Explore all services
+            <UpRightArrowIcon className="size-4 shrink-0" />
+          </Link>
+        </div>
       </div>
     </section>
   );
