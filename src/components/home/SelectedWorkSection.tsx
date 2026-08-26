@@ -7,7 +7,7 @@ function PerformanceVisual() {
         <div className="mock-bar"><i /><i /><i /><span>PERFORMANCE / REFINED</span></div>
         <div className="performance-content">
           <span className="performance-kicker">Built beyond standard.</span>
-          <strong>V<span>///</span>X</strong>
+          <strong>V<span>{"///"}</span>X</strong>
           <div className="performance-line" />
           <small>ENGINEERING · CALIBRATION · DETAIL</small>
         </div>
