@@ -1,17 +1,19 @@
+import Image from "next/image";
+import Link from "next/link";
+import PerformancePreview from "@public/images/apex-performance.png";
 import FadeIn from "../ui/FadeIn";
 
 function PerformanceVisual() {
   return (
-    <div className="work-visual performance-visual" aria-hidden="true">
-      <div className="mock-browser">
-        <div className="mock-bar"><i /><i /><i /><span>PERFORMANCE / REFINED</span></div>
-        <div className="performance-content">
-          <span className="performance-kicker">Built beyond standard.</span>
-          <strong>V<span>{"///"}</span>X</strong>
-          <div className="performance-line" />
-          <small>ENGINEERING · CALIBRATION · DETAIL</small>
-        </div>
-      </div>
+    <div className="work-visual bg-zinc-950">
+      <Image
+        src={PerformancePreview}
+        alt="Automotive performance website concept preview"
+        fill
+        placeholder="blur"
+        sizes="(min-width: 1024px) 66vw, 100vw"
+        className="object-cover object-top"
+      />
     </div>
   );
 }
@@ -51,6 +53,7 @@ const projects = [
     description: "A bold, conversion-focused website direction for a specialist automotive performance brand.",
     meta: "Brand direction · Responsive web design",
     visual: <PerformanceVisual />,
+    href: "https://automotive.mugz.dev",
   },
   {
     label: "Internal system",
@@ -90,6 +93,16 @@ export default function SelectedWorkSection() {
                   <h3 className="display-heading mt-4 text-3xl tracking-[-0.04em] sm:text-4xl">{project.title}</h3>
                   <p className="mt-5 leading-7 text-zinc-600">{project.description}</p>
                   <p className="mt-7 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">{project.meta}</p>
+                  {"href" in project && (
+                    <Link
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-link mt-7 inline-flex"
+                    >
+                      View live demo <span aria-hidden="true">↗</span>
+                    </Link>
+                  )}
                 </div>
               </article>
             </FadeIn>
