@@ -1,13 +1,17 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import NavBar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
 
-export const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+export const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+});
+
+export const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -82,11 +86,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-GB"
-      className={` ${plusJakartaSans.variable} h-full antialiased scrollbar-thin scroll-smooth font-jakarta`}
+      className={`${manrope.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NavBar />
-        <main className="flex-1">
+        <main className="flex-1 min-w-0">
           {children}
         </main>
         <Footer />

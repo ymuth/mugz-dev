@@ -1,77 +1,32 @@
+const steps = [
+  ["01", "Tell me what you need", "Share what your business does, what is not working and what you want to improve."],
+  ["02", "I design and build it", "You get a clear scope first, followed by a focused design and development process."],
+  ["03", "You review it", "See the work, share feedback and make sure everything feels right before launch."],
+  ["04", "We launch and maintain it", "I handle launch and can keep the website secure, updated and running smoothly."],
+] as const;
+
 export default function ExplainSection() {
-    const steps = [
-        {
-            number: "01",
-            title: "Tell us what you need",
-            description:
-                "Start by telling us about your business, what you need from your website, and any ideas or features you already have in mind.",
-        },
-        {
-            number: "02",
-            title: "We plan your website",
-            description:
-                "We'll go through your requirements, agree on the scope, pages, features and design direction, then provide a clear quote before any work begins.",
-        },
-        {
-            number: "03",
-            title: "We design and build it",
-            description:
-                "Once everything is agreed, we'll design and develop your website around your business, keeping you updated and giving you the opportunity to review the progress.",
-        },
-        {
-            number: "04",
-            title: "Review, launch and support",
-            description:
-                "We'll make any final agreed changes, test the website across different devices, launch it, and continue to handle hosting, maintenance and support where included.",
-        },
-    ];
-
-    return (
-        <section className="relative w-full bg-zinc-950 text-white">
-            <div className="mx-auto w-full max-w-7xl px-10 py-20 md:px-20">
-
-                <div className="mx-auto mb-16 max-w-3xl text-center">
-                    <p className="mb-3 font-semibold uppercase tracking-widest text-purple-400">
-                        How it works
-                    </p>
-
-                    <h2 className="text-4xl font-bold md:text-5xl">
-                        From idea to launch
-                    </h2>
-
-                    <p className="mt-5 text-lg text-zinc-300">
-                        A straightforward process from your first enquiry to a finished website,
-                        with clear communication throughout.
-                    </p>
-                </div>
-
-                <div className="relative grid gap-10 md:grid-cols-4">
-
-                    {/* Desktop connecting line */}
-                    <div className="absolute left-0 right-0 top-8 hidden h-px bg-zinc-700 md:block" />
-
-                    {steps.map((step, index) => (
-                        <div
-                            key={index + 1}
-                            className="relative flex flex-col"
-                        >
-                            <div className="relative z-10 mb-6 flex size-16 items-center justify-center rounded-full border-2 border-purple-500 bg-zinc-950 text-lg font-bold">
-                                {index + 1}
-                            </div>
-
-                            <h3 className="mb-3 text-xl font-bold">
-                                {step.title}
-                            </h3>
-
-                            <p className="leading-7 text-zinc-300">
-                                {step.description}
-                            </p>
-                        </div>
-                    ))}
-
-                </div>
-
-            </div>
-        </section>
-    );
+  return (
+    <section className="relative overflow-hidden bg-[#101014] text-white">
+      <div className="process-mark" aria-hidden="true">04</div>
+      <div className="site-shell section-space relative z-10">
+        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+          <p className="eyebrow text-teal-300">How it works</p>
+          <div>
+            <h2 className="display-heading section-heading max-w-3xl">Clear from first conversation to launch.</h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">You do not need a technical brief. A straightforward explanation of your business and what you need is enough to get started.</p>
+          </div>
+        </div>
+        <ol className="mt-16 border-t border-white/15">
+          {steps.map(([number, title, description]) => (
+            <li key={number} className="grid gap-4 border-b border-white/15 py-7 sm:grid-cols-[4rem_minmax(0,0.8fr)_minmax(0,1fr)] sm:gap-8 sm:py-8">
+              <span className="font-mono text-sm text-teal-300">{number}</span>
+              <h3 className="text-lg font-semibold text-white sm:text-xl">{title}</h3>
+              <p className="max-w-xl leading-7 text-zinc-400">{description}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
 }

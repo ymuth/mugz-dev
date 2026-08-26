@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const serviceOptions = [
-    { value: "essentials", label: "Essentials website" },
+    { value: "essentials", label: "Simple business website" },
     { value: "custom", label: "Custom website / web app" },
     { value: "not-sure", label: "Not sure" },
 ] as const;
@@ -104,7 +104,7 @@ export default function QuoteSection() {
                 throw new Error(data.error || "Failed to send request");
             }
 
-            setStatusMessage("Request sent. We'll be in touch soon.");
+            setStatusMessage("Request sent. I'll be in touch soon.");
             setStatusType("success");
             setForm({
                 name: "",
@@ -133,32 +133,19 @@ export default function QuoteSection() {
     }
 
     return (
-        <section className="relative overflow-x-clip w-full flex flex-col bg-zinc-950 text-white">
-
-            <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/20 blur-3xl" />
-            <div className="absolute right-20 bottom-50 size-96 rounded-full bg-purple-500/20 blur-3xl" />
-            <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/20 blur-3xl" />
-            <div className="absolute -left-40 top-30 size-96 rounded-full bg-teal-500/20 blur-3xl" />
-
-            <div className="relative z-10 mx-auto w-full max-w-7xl px-10 py-20 md:px-20">
-
-                <div className="mb-12 text-center">
-                    <p className="mb-3 font-semibold uppercase tracking-widest text-purple-400">
-                        Get Started
-                    </p>
-
-                    <h2 className="text-4xl font-bold md:text-5xl">
-                        Let&apos;s build something.
-                    </h2>
-
-                    <p className="mx-auto mt-5 max-w-2xl text-zinc-300">
-                        Tell us about your project and we&apos;ll get back to you with the next steps.
-                    </p>
+        <section className="relative overflow-hidden bg-[#e8e5df] text-zinc-950">
+            <div className="site-shell section-space relative z-10">
+                <div className="mb-12 grid gap-8 border-b border-zinc-400/70 pb-10 lg:grid-cols-[0.7fr_1.3fr]">
+                    <p className="eyebrow text-purple-700">Start a project</p>
+                    <div>
+                        <h2 className="display-heading section-heading max-w-4xl">Tell me about your business.</h2>
+                        <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">Already have a site, starting from scratch, or just have an idea? Send over what you need and I&apos;ll tell you the best route.</p>
+                    </div>
                 </div>
 
                 <form
                     onSubmit={handleSubmit}
-                    className="mx-auto max-w-3xl bg-white text-black grid grid-cols-1 md:grid-cols-2 gap-6 p-8 rounded-2xl shadow-2xl"
+                    className="ml-auto grid max-w-4xl grid-cols-1 gap-x-8 gap-y-7 border border-zinc-300 bg-white p-6 text-black shadow-[12px_12px_0_#6d28d9] sm:p-8 md:grid-cols-2 lg:p-10"
                 >
                     <label className="flex flex-col">
                         <span className="text-sm font-medium text-slate-700">Name*</span>
@@ -170,7 +157,7 @@ export default function QuoteSection() {
                             autoComplete="name"
                             minLength={2}
                             maxLength={100}
-                            className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                            className="form-field"
                         />
                     </label>
 
@@ -183,7 +170,7 @@ export default function QuoteSection() {
                             data-bwignore="true"
                             onChange={handleInputChange}
                             maxLength={150}
-                            className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                            className="form-field"
                         />
                     </label>
 
@@ -197,7 +184,7 @@ export default function QuoteSection() {
                             onChange={handleInputChange}
                             required
                             autoComplete="email"
-                            className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                            className="form-field"
                         />
                     </label>
 
@@ -210,7 +197,7 @@ export default function QuoteSection() {
                             autoComplete="tel"
                             onChange={handleInputChange}
                             maxLength={50}
-                            className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                            className="form-field"
                         />
                     </label>
 
@@ -225,7 +212,7 @@ export default function QuoteSection() {
                                         value={service.value}
                                         checked={form.service === service.value}
                                         onChange={handleInputChange}
-                                        className="w-4 h-4"
+                                        className="size-4 accent-purple-700"
                                     />
                                     {service.label}
                                 </label>
@@ -244,7 +231,7 @@ export default function QuoteSection() {
                                         value={opt}
                                         checked={form.needs.includes(opt)}
                                         onChange={handleInputChange}
-                                        className="w-4 h-4"
+                                        className="size-4 accent-purple-700"
                                     />
                                     <span className="text-sm">{opt}</span>
                                 </label>
@@ -261,7 +248,7 @@ export default function QuoteSection() {
                             placeholder="https://..."
                             onChange={handleInputChange}
                             maxLength={500}
-                            className="mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                            className="form-field"
                         />
                     </label>
 
@@ -272,7 +259,9 @@ export default function QuoteSection() {
                             value={form.message}
                             onChange={handleInputChange}
                             required
-                            className="mt-2 p-3 border rounded-lg shadow-sm min-h-35 focus:outline-none focus:ring-2 focus:ring-teal-300"
+                            minLength={10}
+                            maxLength={5000}
+                            className="form-field min-h-40 resize-y"
                         />
                     </label>
 
@@ -300,9 +289,7 @@ export default function QuoteSection() {
                                         value={b.value}
                                         checked={form.budget === b.value}
                                         onChange={handleInputChange}
-                                        minLength={10}
-                                        maxLength={5000}
-                                        className="w-4 h-4"
+                                        className="size-4 accent-purple-700"
                                     />
                                     <span className="text-sm">{b.label}</span>
                                 </label>
@@ -310,17 +297,17 @@ export default function QuoteSection() {
                         </div>
                     </fieldset>
 
-                    <div className="md:col-span-2 text-center">
+                    <div className="md:col-span-2">
                         <button
                             type="submit"
                             disabled={submitting}
-                            className="p-4 shadow-lg font-semibold text-white rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 hover:opacity-90 disabled:opacity-50"
+                            className="button bg-zinc-950 text-white hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                            {submitting ? "Sending…" : "Request a Free Quote"}
+                            {submitting ? "Sending…" : "Send project details"}
                         </button>
                     </div>
-                    <p className="md:col-span-2 text-center text-xs text-zinc-500">
-                        We&apos;ll use the information you provide to respond to your enquiry.
+                    <p className="md:col-span-2 text-xs leading-5 text-zinc-500">
+                        I&apos;ll use the information you provide to respond to your enquiry.
                         See our{" "}
                         <Link
                             href="/privacy"

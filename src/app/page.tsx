@@ -3,6 +3,8 @@ import ServicesSection from "@/components/home/ServicesSection";
 import QuoteSection from "@/components/home/QuoteSection";
 import ExplainSection from "@/components/home/ExplainSection";
 import FAQSection from "@/components/home/FAQSection";
+import SelectedWorkSection from "@/components/home/SelectedWorkSection";
+import FoundingOfferSection from "@/components/home/FoundingOfferSection";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -117,6 +119,8 @@ export default function Home() {
 
 
       <HeroSection />
+      <section id="work"><SelectedWorkSection /></section>
+      <FoundingOfferSection />
       <section id="services"><ServicesSection /></section>
       <section id="explanation"><ExplainSection /></section>
       <section id="faq"><FAQSection /></section>
@@ -125,12 +129,5 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-// TODO: Final touches; sitemap & robot, seo, other things like layout - opengraph metadata description etc;
-//       do i have to register with google etc. how do i get my website showing first
-// TODO:
-// Work / portfolio — eventually client work; initially you can show the detailing site and other genuine projects as examples.
 
 

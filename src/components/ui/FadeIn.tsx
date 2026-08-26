@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useMediaQuery } from "react-responsive";
 
 type FadeInProps = {
@@ -22,11 +22,12 @@ export default function FadeIn({
 }: FadeInProps) {
 
   const isDesktop = useMediaQuery({ minWidth: 768 });
+  const reduceMotion = useReducedMotion();
   const actualDelay = isDesktop ? delay : delayMobile;
 
   return (
     <motion.div
-      initial={{
+      initial={reduceMotion ? false : {
         opacity: 0,
         x,
         y,
@@ -39,7 +40,6 @@ export default function FadeIn({
       transition={{
         duration: 0.6,
         delay: actualDelay,
-        
       }}
       viewport={{
         once: true,
