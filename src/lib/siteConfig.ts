@@ -1,5 +1,5 @@
 export const siteConfig = {
-  businessName: "MUGZ",
+  businessName: "MUGZ Development",
   businessEmail: "hello@mugz.dev",
   from: "MUGZ <hello@mugz.dev>",
   from_internal: "MUGZ Forms <forms@mugz.dev>",

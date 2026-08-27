@@ -28,7 +28,7 @@ export default function NavBar() {
     <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${scrolled || open ? "border-zinc-200 bg-[#f8f6f2]/95 text-zinc-950 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur" : "border-white/15 bg-[#0b0b0e]/40 text-white backdrop-blur-sm"}`}>
       <div className="site-shell flex h-20 items-center justify-between gap-6 sm:h-24">
         <Link className="flex items-center gap-3" href="/" onClick={() => setOpen(false)} aria-label="MUGZ home">
-          <span className="flex size-9 items-center justify-center bg-white">
+          <span className="flex size-9 items-center justify-center">
             <Image src="/icon.svg" width={36} height={36} alt="" priority />
           </span>
           <span className="display-heading text-lg font-bold uppercase tracking-[-0.03em] sm:text-xl">{siteConfig.businessName}</span>
