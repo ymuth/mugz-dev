@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import PerformancePreview from "@public/images/apex-performance.png";
+import DetailingPreview from "@public/images/detailing-corp.png";
 import FadeIn from "../ui/FadeIn";
 import UpRightArrowIcon from "../ui/UpRightArrowIcon";
 
@@ -39,10 +40,15 @@ function DashboardVisual() {
 
 function DetailingVisual() {
   return (
-    <div className="work-visual detailing-visual" aria-hidden="true">
-      <div className="detail-word">FORM</div>
-      <div className="detail-silhouette"><span /><i /><i /></div>
-      <div className="detail-caption"><span>Automotive care</span><b>Precision in every finish.</b></div>
+    <div className="work-visual bg-zinc-950">
+      <Image
+        src={DetailingPreview}
+        alt="Detailing Corp automotive detailing website concept preview"
+        fill
+        placeholder="blur"
+        sizes="(min-width: 1024px) 66vw, 100vw"
+        className="object-cover object-left"
+      />
     </div>
   );
 }
@@ -69,6 +75,7 @@ const projects = [
     description: "A premium business website concept designed to make specialist services feel credible and considered.",
     meta: "Art direction · Business website · Enquiries",
     visual: <DetailingVisual />,
+    href: "https://detailing.mugz.dev",
   },
 ] as const;
 

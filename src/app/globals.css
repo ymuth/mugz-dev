@@ -64,16 +64,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .dashboard-list > span { display: flex; justify-content: space-between; border-bottom: 1px solid #e4e4e7; padding-block: clamp(0.5rem, 1.5vw, 0.9rem); font-size: clamp(0.52rem, 1vw, 0.72rem); }
 .dashboard-list i { color: #6d28d9; font-style: normal; }
 
-.detailing-visual { background: linear-gradient(135deg, #0d3434, #092122); color: white; }
-.detail-word { position: absolute; top: 3%; left: -2%; color: rgb(255 255 255 / 0.055); font-family: var(--font-space-grotesk), sans-serif; font-size: clamp(7rem, 25vw, 19rem); font-weight: 700; letter-spacing: -0.09em; line-height: 1; }
-.detail-silhouette { position: absolute; right: 7%; bottom: 16%; left: 7%; height: 32%; border-top: clamp(0.5rem, 1.2vw, 1rem) solid #cbd5d1; border-radius: 55% 48% 10% 10%; filter: drop-shadow(0 1rem 1.5rem rgb(0 0 0 / 0.35)); transform: skewX(-8deg); }
-.detail-silhouette::before { position: absolute; top: -70%; left: 18%; width: 58%; height: 80%; border-top: clamp(0.4rem, 1vw, 0.75rem) solid #cbd5d1; border-radius: 60% 65% 0 0; content: ""; transform: skewX(16deg); }
-.detail-silhouette i { position: absolute; bottom: -1.6rem; width: clamp(2.8rem, 7vw, 5rem); height: clamp(2.8rem, 7vw, 5rem); border: 0.6rem solid #182323; border-radius: 50%; background: #8c9995; }
-.detail-silhouette i:first-of-type { left: 12%; }.detail-silhouette i:last-of-type { right: 12%; }
-.detail-caption { position: absolute; right: 7%; bottom: 7%; left: 7%; display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
-.detail-caption span { color: #5eead4; font-size: clamp(0.5rem, 1vw, 0.7rem); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
-.detail-caption b { max-width: 12ch; font-family: var(--font-space-grotesk), sans-serif; font-size: clamp(1rem, 2.5vw, 2rem); line-height: 1; text-align: right; }
-
 @media (min-width: 640px) { .site-shell { width: min(100% - 3rem, 82rem); } }
 @media (min-width: 1024px) { .site-shell { width: min(100% - 6rem, 82rem); } }
 @media (max-width: 639px) {
