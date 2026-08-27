@@ -43,15 +43,15 @@ export default function NavBar() {
           <button type="button" className="flex size-11 items-center justify-center border border-current/25 lg:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"}>
             <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
             <span className="relative block h-4 w-5">
-              <i className={`absolute left-0 top-0 h-px w-5 bg-current transition ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-              <i className={`absolute left-0 top-[7px] h-px w-5 bg-current transition ${open ? "opacity-0" : ""}`} />
-              <i className={`absolute left-0 top-[14px] h-px w-5 bg-current transition ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+              <i className={`absolute left-0 top-0 h-px w-5 bg-current transition ${open ? "translate-y-1.75 rotate-45" : ""}`} />
+              <i className={`absolute left-0 top-1.75 h-px w-5 bg-current transition ${open ? "opacity-0" : ""}`} />
+              <i className={`absolute left-0 top-3.5 h-px w-5 bg-current transition ${open ? "-translate-y-1.75 -rotate-45" : ""}`} />
             </span>
           </button>
         </div>
       </div>
 
-      <nav id="mobile-navigation" className={`overflow-hidden border-t border-zinc-200 bg-[#f8f6f2] text-zinc-950 transition-[max-height] duration-300 lg:hidden ${open ? "max-h-[32rem]" : "max-h-0 border-transparent"}`} aria-label="Mobile navigation">
+      <nav id="mobile-navigation" className={`overflow-hidden border-t border-zinc-200 bg-[#f8f6f2] text-zinc-950 transition-[max-height] duration-300 lg:hidden ${open ? "max-h-128" : "max-h-0 border-transparent"}`} aria-label="Mobile navigation">
         <div className="site-shell flex flex-col py-3">
           {navLinks.map((link, index) => <Link key={link.label} href={link.href} onClick={() => setOpen(false)} className="flex items-center justify-between border-b border-zinc-200 py-4 text-lg font-semibold"><span>{link.label}</span><span className="font-mono text-xs text-zinc-400">0{index + 1}</span></Link>)}
           <Link href="/#quote" onClick={() => setOpen(false)} className="button mt-5 justify-center bg-purple-700 text-white sm:hidden">Start a project</Link>
