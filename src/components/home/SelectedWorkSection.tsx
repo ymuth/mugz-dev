@@ -70,7 +70,7 @@ const projects = [
     visual: <DashboardVisual />,
   },
   {
-    label: "Practice project",
+    label: "Full Stack Build",
     title: "Automotive Detailing",
     description: "A premium business website concept designed to make specialist services feel credible and considered.",
     meta: "Art direction · Business website · Enquiries",
