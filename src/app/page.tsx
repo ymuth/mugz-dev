@@ -11,7 +11,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   "@id": "https://www.mugz.dev/#business",
 
-  name: "Mugz.Dev",
+  name: "MUGZ",
   url: "https://www.mugz.dev",
   email: "hello@mugz.dev",
 

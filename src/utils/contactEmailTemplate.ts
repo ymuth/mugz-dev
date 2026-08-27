@@ -40,7 +40,7 @@ export function createContactEmailHtml(data: ContactForm) {
                     text-transform:uppercase;
                     color:#c084fc;
                 ">
-                    Mugz.Dev
+                    MUGZ
                 </div>
 
                 <h1 style="
@@ -187,7 +187,7 @@ export function createContactEmailHtml(data: ContactForm) {
                 font-size:12px;
                 text-align:center;
             ">
-                Submitted through the Mugz.Dev contact form.
+                Submitted through the MUGZ contact form.
             </div>
 
         </div>

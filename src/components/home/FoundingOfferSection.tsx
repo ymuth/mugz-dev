@@ -9,7 +9,7 @@ export default function FoundingOfferSection() {
           <div>
             <p className="eyebrow text-teal-200">Founding client offer · 5 places</p>
             <h2 className="display-heading section-heading mt-6 max-w-4xl">A serious website. A deliberately small launch price.</h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-purple-100">I’m taking on the first 5 qualifying business website clients at a reduced launch rate while expanding the MUGZ portfolio.</p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-purple-100">We’re taking on our first 5 qualifying business website clients at a reduced launch rate while expanding the MUGZ portfolio.</p>
           </div>
           <div className="border-l border-white/25 pl-6 sm:pl-9">
             <div className="grid grid-cols-2 gap-6 border-b border-white/25 pb-7">

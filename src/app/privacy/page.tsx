@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageHero from "@/components/global/PageHero";
 
 export const metadata: Metadata = {
     title: "Privacy Policy",
     description:
-        "Privacy policy for Mugz.Dev explaining how personal information submitted through our website is collected, used and protected.",
+        "Privacy policy for MUGZ explaining how personal information submitted through our website is collected, used and protected.",
 
     alternates: {
         canonical: "/privacy",
@@ -14,41 +15,21 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
     return (
         <main className="w-full">
-
-            {/* Hero */}
-            <section className="relative overflow-hidden bg-zinc-950 text-white">
-                <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/10 blur-3xl" />
-                <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/10 blur-3xl" />
-
-                <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 md:px-20 md:py-28">
-
-                    <p className="mb-3 font-semibold uppercase tracking-widest text-purple-400">
-                        Privacy
-                    </p>
-
-                    <h1 className="text-4xl font-bold md:text-6xl">
-                        Privacy Policy
-                    </h1>
-
-                    <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
-                        This privacy policy explains what personal information
-                        Mugz.Dev collects through this website, why we use it
-                        and how it is handled.
-                    </p>
-
-                    <p className="mt-4 text-sm text-zinc-400">
-                        Last updated: 17 August 2026
-                    </p>
-
-                </div>
-            </section>
+            <PageHero
+                eyebrow="Privacy"
+                title="Privacy policy."
+                description="This policy explains what personal information MUGZ collects through this website, why we use it and how it is handled."
+            />
 
 
             {/* Policy */}
-            <section className="bg-white text-black">
-                <div className="mx-auto max-w-4xl px-6 py-20 md:px-20 md:py-24">
+            <section className="bg-[#f3f1ed] text-black">
+                <div className="site-shell section-space">
+                    <div className="mb-12 border-b border-zinc-300 pb-6 text-sm font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                        Last updated: 17 August 2026
+                    </div>
 
-                    <div className="space-y-12 leading-8 text-zinc-700">
+                    <div className="max-w-4xl space-y-12 leading-8 text-zinc-700 [&>section]:border-t [&>section]:border-zinc-300 [&>section]:pt-8 [&>section:first-child]:border-t-0 [&>section:first-child]:pt-0">
 
                         {/* Who we are */}
                         <section>
@@ -58,13 +39,13 @@ export default function PrivacyPage() {
 
                             <div className="mt-4 space-y-4">
                                 <p>
-                                    Mugz.Dev provides web development, software
+                                    MUGZ provides web development, software
                                     development and related digital services.
                                 </p>
 
                                 <p>
                                     For the personal information described in
-                                    this policy, Mugz.Dev is responsible for
+                                    this policy, MUGZ is responsible for
                                     deciding how and why that information is
                                     used.
                                 </p>
@@ -125,7 +106,7 @@ export default function PrivacyPage() {
 
                             <p className="mt-4">
                                 We use the information you provide only where
-                                necessary to operate Mugz.Dev and communicate
+                                necessary to operate MUGZ and communicate
                                 with you. This may include:
                             </p>
 
@@ -189,7 +170,7 @@ export default function PrivacyPage() {
                                 <p>
                                     For general enquiries, communication,
                                     website security and the ordinary
-                                    administration of Mugz.Dev, we may rely on
+                                    administration of MUGZ, we may rely on
                                     our legitimate interests in operating the
                                     business and responding to people who
                                     contact us.
@@ -343,18 +324,11 @@ export default function PrivacyPage() {
                             </h2>
 
                             <p className="mt-4">
-                                Mugz.Dev does not use personal
+                                MUGZ does not use personal
                                 information submitted through its forms for
                                 advertising or behavioural profiling.
                             </p>
 
-                            {/* <p className="mt-4">
-                                If we introduce non-essential analytics,
-                                advertising cookies or similar tracking
-                                technologies in the future, this policy and any
-                                required cookie controls will be updated before
-                                those technologies are used.
-                            </p> */}
                         </section>
 
 
@@ -382,7 +356,7 @@ export default function PrivacyPage() {
 
                             <div className="mt-4 space-y-4">
                                 <p>
-                                    If you have a concern about how Mugz.Dev
+                                    If you have a concern about how MUGZ
                                     handles your personal information, please
                                     contact us first at{" "}
                                     <a

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     title: "Web Development & Custom Software Services Sheffield",
 
     description:
-        "Web development and custom software services in Sheffield. Mugz.Dev builds professional websites, internal management systems, web applications, dashboards, booking systems and business automation.",
+        "MUGZ builds professional business websites, custom web applications, internal systems and business automation for organisations in Sheffield and across the UK.",
 
     keywords: [
         "web development Sheffield",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: "Web Development & Custom Software Services | Mugz.Dev",
+        title: "Business Websites & Custom Software | MUGZ",
         description:
             "Professional websites, web applications, internal management systems and business automation for Sheffield businesses and beyond.",
         url: "/services",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
     twitter: {
         card: "summary_large_image",
-        title: "Web Development & Custom Software Services | Mugz.Dev",
+        title: "Business Websites & Custom Software | MUGZ",
         description:
             "Professional websites, internal systems and custom software built around your business.",
     },

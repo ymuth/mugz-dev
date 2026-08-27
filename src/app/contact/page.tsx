@@ -1,149 +1,60 @@
 import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
+import PageHero from "@/components/global/PageHero";
 
 export default function ContactPage() {
-    return (
-        <main className="w-full mt-10">
+  return (
+    <main>
+      <PageHero
+        eyebrow="Contact"
+        title="Tell us about your business."
+        description="Whether you need a new website, want to improve an existing one, or have an idea for something more custom, send us the details and we’ll recommend the best route."
+      />
 
-            {/* Hero */}
-            <section className="relative overflow-hidden bg-zinc-950 text-white">
-                <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/10 blur-3xl" />
-                <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/10 blur-3xl" />
+      <section className="bg-[#e8e5df] text-zinc-950">
+        <div className="site-shell section-space grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+          <aside>
+            <p className="eyebrow text-purple-700">Start here</p>
+            <h2 className="display-heading mt-6 text-3xl tracking-[-0.04em] sm:text-4xl">A useful first conversation, without the technical brief.</h2>
+            <p className="mt-5 leading-7 text-zinc-600">Tell us what the business does, what is not working and what you want to improve. We’ll take it from there.</p>
 
-                <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:px-20 md:py-32">
-                    <div className="mx-auto max-w-3xl text-center">
+            <div className="mt-10 border-y border-zinc-400/70 py-7">
+              <p className="eyebrow text-zinc-500">Email</p>
+              <a href="mailto:hello@mugz.dev" className="mt-3 inline-block text-lg font-semibold transition hover:text-purple-700">hello@mugz.dev</a>
+            </div>
 
-                        <p className="mb-4 font-semibold uppercase tracking-widest text-purple-400">
-                            Contact
-                        </p>
+            <div className="mt-8 border-l-2 border-teal-600 pl-5">
+              <p className="font-semibold">Looking for the founding-client offer?</p>
+              <p className="mt-2 text-sm leading-6 text-zinc-600">The £150 setup and £20/month hosting and maintenance offer is available to our first 5 qualifying business website clients. Advanced functionality is quoted separately.</p>
+              <Link href="/#quote" className="text-link mt-5 inline-flex">Use the project form</Link>
+            </div>
+          </aside>
 
-                        <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-                            Let&apos;s talk.
-                        </h1>
+          <ContactForm />
+        </div>
+      </section>
 
-                        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-                            Have a question, need help with something existing, or just want
-                            to discuss an idea? Send us a message and we&apos;ll get back to you.
-                        </p>
-
-                    </div>
-                </div>
-            </section>
-
-
-            {/* Contact */}
-            <section className="bg-linear-to-br from-zinc-100 via-zinc-200 to-slate-300 text-black">
-                <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[0.8fr_1.2fr] md:px-20 md:py-28">
-
-                    {/* Contact information */}
-                    <div>
-                        <p className="mb-3 font-semibold uppercase tracking-widest text-purple-600">
-                            Get In Touch
-                        </p>
-
-                        <h2 className="text-3xl font-bold md:text-4xl">
-                            We&apos;re here to help.
-                        </h2>
-
-                        <p className="mt-5 max-w-lg leading-7 text-zinc-700">
-                            For general enquiries, questions about our services, existing
-                            projects or anything else, you can send us a message using the
-                            form or contact us directly by email.
-                        </p>
-
-
-                        {/* Email card */}
-                        <div className="mt-10">
-                            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-zinc-500">
-                                Email
-                            </p>
-
-                            <a
-                                href="mailto:hello@mugz.dev"
-                                className="text-xl font-semibold text-zinc-950 transition hover:text-purple-600"
-                            >
-                                hello@mugz.dev
-                            </a>
-                        </div>
-
-
-                        {/* Quote CTA */}
-                        <div className="mt-10 rounded-2xl border border-zinc-300 bg-white/70 p-6 shadow-sm backdrop-blur">
-                            <h3 className="text-lg font-bold">
-                                Looking for a quote?
-                            </h3>
-
-                            <p className="mt-2 leading-7 text-zinc-600">
-                                If you already have a project in mind, our quote form gives
-                                you space to tell us what you need so we can understand the
-                                project before getting back to you.
-                            </p>
-
-                            <Link
-                                href="/#quote"
-                                className="mt-5 inline-flex font-semibold text-purple-700 transition hover:text-purple-900"
-                            >
-                                Request a Free Quote →
-                            </Link>
-                        </div>
-
-
-                        {/* Socials later */}
-                        {/* <div className="mt-10">
-                            <p className="text-sm leading-6 text-zinc-500">
-                                More ways to get in touch will be added here as Mugz.Dev grows.
-                            </p>
-                        </div> */}
-
-                    </div>
-
-
-                    {/* General contact form */}
-                    <ContactForm />
-
-                </div>
-            </section>
-
-
-            {/* Bottom CTA */}
-            <section className="relative overflow-hidden bg-zinc-950 text-white">
-                <div className="absolute -left-40 top-0 size-96 rounded-full bg-teal-500/10 blur-3xl" />
-                <div className="absolute -right-40 bottom-0 size-96 rounded-full bg-purple-500/10 blur-3xl" />
-
-                <div className="relative z-10 mx-auto max-w-4xl px-6 py-20 text-center md:px-20 md:py-24">
-
-                    <p className="mb-3 font-semibold uppercase tracking-widest text-teal-400">
-                        Starting A Project?
-                    </p>
-
-                    <h2 className="text-3xl font-bold md:text-5xl">
-                        Tell us what you&apos;re looking to build.
-                    </h2>
-
-                    <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
-                        From professional websites to custom business applications and
-                        internal software, we can help work out the right solution.
-                    </p>
-
-                    <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-                        <Link
-                            href="/#quote"
-                            className="rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 px-7 py-4 font-semibold text-white shadow-lg hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 transition-opacity hover:opacity-90"
-                        >
-                            Request a Free Quote
-                        </Link>
-
-                        <Link
-                            href="/services"
-                            className="rounded-full px-7 py-4 font-semibold bg-linear-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
-                        >
-                            View Services
-                        </Link>
-                    </div>
-
-                </div>
-            </section>
-
-        </main>
-    );
+      <section className="bg-[#101014] text-white">
+        <div className="site-shell section-space">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+            <p className="eyebrow text-teal-300">What happens next</p>
+            <h2 className="display-heading section-heading max-w-4xl">A clear response and a sensible next step.</h2>
+          </div>
+          <ol className="mt-14 grid border-t border-white/15 md:grid-cols-3">
+            {[
+              ["01", "We review the details", "We’ll look at what you need and whether MUGZ is the right fit."],
+              ["02", "We clarify the scope", "If useful, we’ll ask a few focused questions and recommend the best route."],
+              ["03", "You get a clear next step", "We’ll explain the likely scope, timing and pricing before any work begins."],
+            ].map(([number, title, description], index) => (
+              <li key={number} className={`border-b border-white/15 py-8 md:px-8 ${index < 2 ? "md:border-r" : ""} ${index === 0 ? "md:pl-0" : ""}`}>
+                <span className="font-mono text-sm text-purple-400">{number}</span>
+                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+                <p className="mt-3 leading-7 text-zinc-400">{description}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    </main>
+  );
 }

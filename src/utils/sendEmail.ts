@@ -21,7 +21,7 @@ export async function sendQuoteEmail(data: QuoteForm) {
 
 
     const { data: res, error } = await resend.emails.send({
-        from: siteConfig.from_internal ?? "Mugz.Dev Forms <hello@mugz.dev>",
+        from: siteConfig.from_internal ?? "MUGZ Forms <hello@mugz.dev>",
         to: businessEmail,
         replyTo: data.email,
         subject: `New Quote Request from ${data.name}`,
@@ -48,10 +48,10 @@ export async function sendConfirmationEmail(data: QuoteForm) {
 
 
     const { data: res, error } = await resend.emails.send({
-        from: siteConfig.from ?? "Mugz.Dev <hello@mugz.dev>",
+        from: siteConfig.from ?? "MUGZ <hello@mugz.dev>",
         to: data.email,
         replyTo: businessEmail,
-        subject: `"We've received your quote request | Mugz.Dev`,
+        subject: "We've received your quote request | MUGZ",
         html,
     });
 
@@ -75,7 +75,7 @@ export async function sendContactEmail(data: ContactForm) {
 
 
     const { data: res, error } = await resend.emails.send({
-        from: siteConfig.from_internal ?? "Mugz.Dev Forms <hello@mugz.dev>",
+        from: siteConfig.from_internal ?? "MUGZ Forms <hello@mugz.dev>",
         to: businessEmail,
         replyTo: data.email,
         subject: `New Enquiry from ${data.name}`,

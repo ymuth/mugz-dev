@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.mugz.dev"),
 
   title: {
-    default: "Mugz.Dev | Web Development & Custom Software Sheffield",
-    template: "%s | Mugz.Dev",
+    default: "MUGZ | Web Development & Custom Software Sheffield",
+    template: "%s | MUGZ",
   },
 
   description:
@@ -37,18 +37,18 @@ export const metadata: Metadata = {
     "internal management systems",
     "web applications",
     "business websites",
-    "Mugz.Dev",
+    "MUGZ",
   ],
 
   authors: [
     {
-      name: "Mugz.Dev",
+      name: "MUGZ",
       url: "https://www.mugz.dev",
     },
   ],
 
-  creator: "Mugz.Dev",
-  publisher: "Mugz.Dev",
+  creator: "MUGZ",
+  publisher: "MUGZ",
 
   alternates: {
     canonical: "/",
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "Mugz.Dev",
-    title: "Mugz.Dev | Web Development & Custom Software Sheffield",
+    siteName: "MUGZ",
+    title: "MUGZ | Web Development & Custom Software Sheffield",
     description:
       "Professional websites, applications and custom business software built around your business.",
     url: "https://www.mugz.dev",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Mugz.Dev | Web Development & Custom Software Sheffield",
+    title: "MUGZ | Web Development & Custom Software Sheffield",
     description:
       "Professional websites, applications and custom business software built around your business.",
   },

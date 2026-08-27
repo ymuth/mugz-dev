@@ -83,7 +83,7 @@ export function createConfirmationEmailHtml(data: QuoteForm) {
                     text-transform:uppercase;
                     color:#c084fc;
                 ">
-                    Mugz.Dev
+                    MUGZ
                 </div>
 
                 <h1 style="
@@ -120,7 +120,7 @@ export function createConfirmationEmailHtml(data: QuoteForm) {
                     line-height:1.7;
                     color:#3f3f46;
                 ">
-                    Thanks for contacting Mugz.Dev. We'll review the details you've provided
+                    Thanks for contacting MUGZ. We'll review the details you've provided
                     and get back to you shortly to discuss your project and the next steps.
                 </p>
 
@@ -267,7 +267,7 @@ export function createConfirmationEmailHtml(data: QuoteForm) {
                 ">
                     <strong>Yusaf Muthana</strong><br />
                     Lead Developer<br />
-                    Mugz.Dev<br />
+                    MUGZ<br />
                     <a
                         href="mailto:hello@mugz.dev"
                         style="color:#7c3aed;text-decoration:none;"
@@ -286,7 +286,7 @@ export function createConfirmationEmailHtml(data: QuoteForm) {
                 font-size:12px;
                 text-align:center;
             ">
-                This email was sent automatically after submitting a quote request on Mugz.Dev.
+                This email was sent automatically after submitting a quote request on MUGZ.
             </div>
 
         </div>

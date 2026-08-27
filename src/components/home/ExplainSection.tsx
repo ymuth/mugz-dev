@@ -1,8 +1,8 @@
 const steps = [
-  ["01", "Tell me what you need", "Share what your business does, what is not working and what you want to improve."],
-  ["02", "I design and build it", "You get a clear scope first, followed by a focused design and development process."],
+  ["01", "Tell us what you need", "Share what your business does, what is not working and what you want to improve."],
+  ["02", "We design and build it", "You get a clear scope first, followed by a focused design and development process."],
   ["03", "You review it", "See the work, share feedback and make sure everything feels right before launch."],
-  ["04", "We launch and maintain it", "I handle launch and can keep the website secure, updated and running smoothly."],
+  ["04", "We launch and maintain it", "We handle launch and can keep the website secure, updated and running smoothly."],
 ] as const;
 
 export default function ExplainSection() {

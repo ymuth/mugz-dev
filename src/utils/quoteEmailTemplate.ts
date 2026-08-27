@@ -55,7 +55,7 @@ export function createQuoteEmailHtml(data: QuoteForm) {
             color:#c084fc;
             margin-bottom:8px;
             ">
-            Mugz.Dev
+            MUGZ
             </div>
 
             <h1 style="
@@ -208,7 +208,7 @@ export function createQuoteEmailHtml(data: QuoteForm) {
             color:#71717a;
             font-size:12px;
         ">
-            Submitted through the Mugz.Dev quote form.
+            Submitted through the MUGZ quote form.
         </div>
 
         </div>

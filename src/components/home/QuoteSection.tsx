@@ -104,7 +104,7 @@ export default function QuoteSection() {
                 throw new Error(data.error || "Failed to send request");
             }
 
-            setStatusMessage("Request sent. I'll be in touch soon.");
+            setStatusMessage("Request sent. We'll be in touch soon.");
             setStatusType("success");
             setForm({
                 name: "",
@@ -138,8 +138,8 @@ export default function QuoteSection() {
                 <div className="mb-12 grid gap-8 border-b border-zinc-400/70 pb-10 lg:grid-cols-[0.7fr_1.3fr]">
                     <p className="eyebrow text-purple-700">Start a project</p>
                     <div>
-                        <h2 className="display-heading section-heading max-w-4xl">Tell me about your business.</h2>
-                        <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">Already have a site, starting from scratch, or just have an idea? Send over what you need and I&apos;ll tell you the best route.</p>
+                        <h2 className="display-heading section-heading max-w-4xl">Tell us about your business.</h2>
+                        <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">Already have a site, starting from scratch, or just have an idea? Send over what you need and we&apos;ll recommend the best route.</p>
                     </div>
                 </div>
 
@@ -307,7 +307,7 @@ export default function QuoteSection() {
                         </button>
                     </div>
                     <p className="md:col-span-2 text-xs leading-5 text-zinc-500">
-                        I&apos;ll use the information you provide to respond to your enquiry.
+                        We&apos;ll use the information you provide to respond to your enquiry.
                         See our{" "}
                         <Link
                             href="/privacy"

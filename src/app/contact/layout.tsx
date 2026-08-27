@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact | Web & Software Development Sheffield",
+    title: "Contact Our Web & Software Studio",
 
     description:
-        "Contact Mugz.Dev for web development, custom software and business applications in Sheffield, South Yorkshire and across the UK. Email hello@mugz.dev or send us an enquiry.",
+        "Contact MUGZ about a professional business website, custom software, web application or internal system in Sheffield and across the UK.",
 
     keywords: [
         "contact web developer Sheffield",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         "software developer Sheffield",
         "website development Sheffield",
         "custom software Sheffield",
-        "Mugz.Dev contact",
+        "MUGZ contact",
     ],
 
     alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: "Contact Mugz.Dev",
+        title: "Contact MUGZ | Start a Web or Software Project",
         description:
             "Get in touch about websites, custom software, internal business systems or applications.",
         url: "/contact",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
     twitter: {
         card: "summary_large_image",
-        title: "Contact Mugz.Dev",
+        title: "Contact MUGZ",
         description:
             "Get in touch about websites, applications and custom business software.",
     },

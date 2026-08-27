@@ -1,308 +1,97 @@
 import Link from "next/link";
+import PageHero from "@/components/global/PageHero";
+
+const approach = [
+  ["01", "Understand the business", "We start with how the business works now, where time is being lost and what customers or staff actually need."],
+  ["02", "Choose the useful route", "The answer might be a focused website, a custom application or a smaller workflow improvement. The scope should fit the problem."],
+  ["03", "Design for real use", "Clear journeys, readable interfaces and sensible responsive behaviour matter as much as the technology behind them."],
+  ["04", "Build for the next step", "We keep the solution maintainable and explain what is included, what happens at launch and how future changes can be handled."],
+] as const;
+
+const values = [
+  ["Business first", "Technology is useful when it supports a clear commercial or operational outcome."],
+  ["Direct communication", "Businesses work directly with MUGZ, keeping decisions clear and the process easy to follow."],
+  ["Purpose over complexity", "We avoid adding features, platforms or processes that do not earn their place."],
+  ["Care in the details", "Typography, accessibility, mobile behaviour and the less-visible technical foundations all matter."],
+] as const;
 
 export default function AboutPage() {
-    return (
-        <main className="w-full mt-10">
-
-            {/* Hero */}
-            <section className="relative overflow-hidden bg-zinc-950 text-white">
-                <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/10 blur-3xl" />
-                <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/10 blur-3xl" />
-
-                <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:px-20 md:py-32">
-                    <div className="max-w-4xl">
-
-                        <p className="mb-4 font-semibold uppercase tracking-widest text-purple-400">
-                            About Mugz.Dev
-                        </p>
-
-                        <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-                            Websites and software
-                            <span className="block text-zinc-300">
-                                built with purpose.
-                            </span>
-                        </h1>
-
-                        <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-                            Based in Sheffield, Mugz.Dev helps businesses across South Yorkshire
-                            and the UK build modern websites, applications and internal software
-                            designed around the way they actually work.
-                        </p>
-
-                    </div>
-                </div>
-            </section>
-
-
-            {/* About Me */}
-            <section className="bg-linear-to-br from-zinc-100 via-zinc-200 to-slate-300 text-black">
-                <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 md:grid-cols-2 md:px-20 md:py-28">
-
-                    <div>
-                        <p className="mb-3 font-semibold uppercase tracking-widest text-purple-600">
-                            Behind Mugz.Dev
-                        </p>
-
-                        <h2 className="text-3xl font-bold md:text-4xl">
-                            Commercial experience behind the work.
-                        </h2>
-                    </div>
-
-                    <div className="space-y-5 text-lg leading-8 text-zinc-700">
-                        <p>
-                            Mugz.Dev is led by software engineers with experience building websites, applications and internal management software for businesses.
-                        </p>
-
-                        <p>
-                            That experience includes work with advertising agencies, developing internal
-                            software used within the business alongside websites and applications
-                            created for clients.
-                        </p>
-
-                        <p>
-                            With experience spanning both customer-facing products
-                            and internal systems, ensuring each project is 
-                            built with both usability and real business needs in mind.
-                        </p>
-                    </div>
-
-                </div>
-            </section>
-
-
-            {/* Why Mugz.Dev */}
-            <section className="relative overflow-hidden bg-zinc-950 text-white">
-                <div className="absolute -right-40 bottom-0 size-96 rounded-full bg-purple-500/10 blur-3xl" />
-                <div className="absolute -left-40 top-0 size-96 rounded-full bg-teal-500/10 blur-3xl" />
-
-                <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 md:px-20 md:py-28">
-
-                    <div className="max-w-3xl">
-
-                        <p className="mb-3 font-semibold uppercase tracking-widest text-teal-400">
-                            Why Mugz.Dev?
-                        </p>
-
-                        <h2 className="text-3xl font-bold md:text-5xl">
-                            Software should fit the business.
-                            <span className="block text-zinc-400">
-                                Not the other way around.
-                            </span>
-                        </h2>
-
-                    </div>
-
-                    <div className="mt-10 max-w-4xl space-y-5 text-lg leading-8 text-zinc-300">
-
-                        <p>
-                            Businesses are often left choosing between basic,
-                            one-size-fits-all websites or expensive solutions containing
-                            far more than they actually need.
-                        </p>
-
-                        <p>
-                            Mugz.Dev was created to offer a more straightforward approach:
-                            understand what the business is trying to achieve first, then
-                            build the right solution around it.
-                        </p>
-
-                        <p>
-                            That could mean a professional website that gives customers
-                            confidence in your business, or something more advanced such as
-                            a booking platform, management system, customer portal or custom
-                            internal application.
-                        </p>
-
-                        <p className="font-semibold text-white">
-                            No unnecessary complexity. No one-size-fits-all solution.
-                            Just software built around what your business actually needs.
-                        </p>
-
-                    </div>
-
-                </div>
-            </section>
-
-
-            {/* Approach */}
-            <section className="bg-white text-black">
-                <div className="mx-auto max-w-7xl px-6 py-20 md:px-20 md:py-28">
-
-                    <div className="mx-auto mb-14 max-w-3xl text-center">
-
-                        <p className="mb-3 font-semibold uppercase tracking-widest text-purple-600">
-                            Our Approach
-                        </p>
-
-                        <h2 className="text-3xl font-bold md:text-5xl">
-                            Built around your business.
-                        </h2>
-
-                        <p className="mt-5 text-lg leading-8 text-zinc-600">
-                            Every business works differently. The technology behind it
-                            should reflect that.
-                        </p>
-
-                    </div>
-
-                    <div className="grid gap-8 md:grid-cols-3">
-
-                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 shadow-sm">
-                            <div className="mb-5 text-3xl font-bold text-purple-600">
-                                01
-                            </div>
-
-                            <h3 className="text-xl font-bold">
-                                Purpose-built
-                            </h3>
-
-                            <p className="mt-3 leading-7 text-zinc-600">
-                                Solutions are designed around your requirements rather than
-                                forcing your business into a generic template.
-                            </p>
-                        </div>
-
-
-                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 shadow-sm">
-                            <div className="mb-5 text-3xl font-bold text-teal-600">
-                                02
-                            </div>
-
-                            <h3 className="text-xl font-bold">
-                                Modern development
-                            </h3>
-
-                            <p className="mt-3 leading-7 text-zinc-600">
-                                Fast, responsive and maintainable websites and applications
-                                built using modern technologies and development practices.
-                            </p>
-                        </div>
-
-
-                        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 shadow-sm">
-                            <div className="mb-5 text-3xl font-bold text-purple-600">
-                                03
-                            </div>
-
-                            <h3 className="text-xl font-bold">
-                                Direct communication
-                            </h3>
-
-                            <p className="mt-3 leading-7 text-zinc-600">
-                                You communicate directly with the person designing and
-                                developing your project, keeping the process simple and clear.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-
-            {/* More Than Websites */}
-            <section className="bg-linear-to-br from-zinc-100 via-zinc-200 to-slate-300 text-black">
-                <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 py-20 md:grid-cols-2 md:px-20 md:py-28">
-
-                    <div>
-
-                        <p className="mb-3 font-semibold uppercase tracking-widest text-teal-700">
-                            More Than Websites
-                        </p>
-
-                        <h2 className="text-3xl font-bold leading-tight md:text-5xl">
-                            Digital solutions for more than just your homepage.
-                        </h2>
-
-                        <p className="mt-6 text-lg leading-8 text-zinc-700">
-                            A website is often only one part of what a business needs.
-                            Mugz.Dev can also build custom applications and internal tools
-                            designed around specific business processes.
-                        </p>
-
-                        <p className="mt-5 text-lg leading-8 text-zinc-700">
-                            From managing staff and customers to automating repetitive work,
-                            the goal is to use software to make the business easier to run.
-                        </p>
-
-                        <Link
-                            href="/services"
-                            className="mt-8 inline-flex rounded-full border border-zinc-500 bg-zinc-950 px-7 py-4 font-semibold text-white transition duration-300 hover:opacity-90 hover:bg-zinc-50 hover:text-black "
-                        >
-                            Explore our services →
-                        </Link>
-
-                    </div>
-
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-
-                        {[
-                            "Business websites",
-                            "Internal management systems",
-                            "Admin dashboards",
-                            "Booking systems",
-                            "Customer & staff portals",
-                            "Database-driven applications",
-                            "Email automation",
-                            "Custom business workflows",
-                        ].map((service) => (
-                            <div
-                                key={service}
-                                className="rounded-xl border border-zinc-300 bg-white/70 p-5 font-medium shadow-sm backdrop-blur"
-                            >
-                                {service}
-                            </div>
-                        ))}
-
-                    </div>
-
-                </div>
-            </section>
-
-
-            {/* CTA */}
-            <section className="relative overflow-hidden bg-zinc-950 text-white">
-                <div className="absolute -left-40 bottom-0 size-96 rounded-full bg-purple-500/10 blur-3xl" />
-                <div className="absolute -right-40 top-0 size-96 rounded-full bg-teal-500/10 blur-3xl" />
-
-                <div className="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center md:px-20">
-
-                    <p className="mb-3 font-semibold uppercase tracking-widest text-purple-400">
-                        Have Something In Mind?
-                    </p>
-
-                    <h2 className="text-3xl font-bold md:text-5xl">
-                        Let&apos;s turn your idea into something useful.
-                    </h2>
-
-                    <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
-                        Whether you already know exactly what you need or just have an idea
-                        you&apos;d like to explore, tell us about your project and we&apos;ll
-                        help work out the right approach.
-                    </p>
-
-                    <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-
-                        <Link
-                            href="/#quote"
-                            className="rounded-full bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 px-7 py-4 font-semibold text-white shadow-lg hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 transition-opacity hover:opacity-90"
-                        >
-                            Request a Free Quote
-                        </Link>
-
-                        <Link
-                            href="/services"
-                            className="rounded-full px-7 py-4 font-semibold bg-linear-to-r from-teal-400 via-teal-500 to-teal-600 text-white hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 transition-opacity hover:opacity-90"
-                        >
-                            View Services
-                        </Link>
-
-                    </div>
-
-                </div>
-            </section>
-
-        </main>
-    );
+  return (
+    <main>
+      <PageHero
+        eyebrow="About MUGZ"
+        title="A small studio with a business-first approach."
+        description="MUGZ works with businesses that need a stronger online presence or software that fits the way their work actually happens."
+      />
+
+      <section className="bg-[#f3f1ed] text-zinc-950">
+        <div className="site-shell section-space grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+          <div>
+            <p className="eyebrow text-purple-700">Why MUGZ exists</p>
+            <span className="mt-8 block h-px w-20 bg-teal-600" />
+          </div>
+          <div className="space-y-6 text-lg leading-8 text-zinc-600">
+            <h2 className="display-heading section-heading max-w-4xl text-zinc-950">Software should fit the business—not the other way around.</h2>
+            <p>Businesses are often left choosing between generic tools that never quite fit and overly complex projects that solve more than they need.</p>
+            <p>At MUGZ, we take a more direct route: understand the goal, reduce the unnecessary complexity and build the website or system around the people who will use it.</p>
+            <p className="font-semibold text-zinc-950">That means practical scope, clear communication and work that supports the business beyond launch day.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white text-zinc-950">
+        <div className="site-shell section-space">
+          <div className="grid gap-8 border-b border-zinc-300 pb-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <p className="eyebrow text-teal-700">How we approach projects</p>
+            <h2 className="display-heading section-heading max-w-4xl">Clear thinking before code.</h2>
+          </div>
+          <ol>
+            {approach.map(([number, title, description]) => (
+              <li key={number} className="grid gap-5 border-b border-zinc-300 py-8 sm:grid-cols-[4rem_minmax(0,0.8fr)_minmax(0,1fr)] sm:gap-8 sm:py-10">
+                <span className="font-mono text-sm text-purple-700">{number}</span>
+                <h3 className="display-heading text-2xl tracking-[-0.03em]">{title}</h3>
+                <p className="max-w-xl leading-7 text-zinc-600">{description}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#101014] text-white">
+        <div className="process-mark" aria-hidden="true">04</div>
+        <div className="site-shell section-space relative z-10">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+            <p className="eyebrow text-teal-300">What we value</p>
+            <div>
+              <h2 className="display-heading section-heading max-w-4xl">Professional work without the agency theatre.</h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">MUGZ is deliberately small and direct. We focus on understanding the work, communicating clearly and delivering something useful.</p>
+            </div>
+          </div>
+          <div className="mt-14 grid border-t border-white/15 md:grid-cols-2">
+            {values.map(([title, description], index) => (
+              <article key={title} className={`border-b border-white/15 py-8 md:px-8 ${index % 2 === 0 ? "md:border-r md:pl-0" : "md:pr-0"}`}>
+                <span className="mb-5 block size-2 bg-purple-400" />
+                <h3 className="display-heading text-2xl tracking-[-0.03em]">{title}</h3>
+                <p className="mt-3 max-w-lg leading-7 text-zinc-400">{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#e8e5df] text-zinc-950">
+        <div className="site-shell section-space grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <p className="eyebrow text-purple-700">Why businesses work with us</p>
+          <div>
+            <h2 className="display-heading section-heading max-w-4xl">One clear route from idea to launch.</h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">We work directly with businesses, explain decisions in plain language and keep the project tied to the outcome it needs to deliver.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/#quote" className="button bg-zinc-950 text-white hover:bg-purple-700">Start a project</Link>
+              <Link href="/services" className="button border border-zinc-400 text-zinc-950 hover:border-zinc-950">View services</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

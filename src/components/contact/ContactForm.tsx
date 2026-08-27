@@ -102,7 +102,7 @@ export default function ContactForm() {
     return (
         <form
             onSubmit={handleSubmit}
-            className="relative grid grid-cols-1 gap-6 rounded-2xl bg-white p-8 shadow-xl md:grid-cols-2"
+            className="relative grid grid-cols-1 gap-x-8 gap-y-7 border border-zinc-300 bg-white p-6 shadow-[12px_12px_0_#6d28d9] sm:p-8 md:grid-cols-2 lg:p-10"
         >
 
             {/* Name */}
@@ -119,7 +119,7 @@ export default function ContactForm() {
                     minLength={2}
                     maxLength={100}
                     autoComplete="name"
-                    className="mt-2 rounded-lg border p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                    className="form-field"
                 />
             </label>
 
@@ -138,7 +138,7 @@ export default function ContactForm() {
                     required
                     maxLength={254}
                     autoComplete="email"
-                    className="mt-2 rounded-lg border p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                    className="form-field"
                 />
             </label>
 
@@ -157,7 +157,7 @@ export default function ContactForm() {
                     minLength={3}
                     maxLength={150}
                     placeholder="What can we help with?"
-                    className="mt-2 rounded-lg border p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                    className="form-field"
                 />
             </label>
 
@@ -178,7 +178,7 @@ export default function ContactForm() {
                     minLength={10}
                     maxLength={5000}
                     placeholder="Tell us how we can help..."
-                    className="mt-2 min-h-44 rounded-lg border p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-300"
+                    className="form-field min-h-44 resize-y"
                 />
             </label>
 
@@ -202,13 +202,13 @@ export default function ContactForm() {
                 <button
                     type="submit"
                     disabled={submitting}
-                    className="rounded-full bg-linear-to-r from-purple-500 to-purple-600 px-7 py-4 font-semibold text-white shadow-lg transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="button bg-zinc-950 text-white hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     {submitting ? "Sending…" : "Send Message"}
                 </button>
             </div>
             
-            <p className="md:col-span-2 text-center text-xs text-zinc-500">
+            <p className="md:col-span-2 text-xs leading-5 text-zinc-500">
                 We&apos;ll use the information you provide to respond to your enquiry.
                 See our{" "}
                 <Link
@@ -224,7 +224,8 @@ export default function ContactForm() {
             {/* Status */}
             {statusMessage && (
                 <div
-                    className={`md:col-span-2 rounded-lg border p-4 text-center text-sm font-medium ${statusType === "success"
+                    role="status"
+                    className={`md:col-span-2 border p-4 text-sm font-medium ${statusType === "success"
                         ? "border-green-300 bg-green-50 text-green-800"
                         : "border-red-300 bg-red-50 text-red-800"
                         }`}
