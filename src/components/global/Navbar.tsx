@@ -36,6 +36,7 @@ export default function NavBar() {
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
           {navLinks.map((link) => <Link key={link.label} href={link.href} className="nav-link">{link.label}</Link>)}
+          <Link href="/#offer" className={`nav-link transition-colors ${scrolled || open ? "text-accent-purple" : "text-accent-blue"}`}>Offer</Link>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -54,6 +55,7 @@ export default function NavBar() {
       <nav id="mobile-navigation" className={`overflow-hidden border-t border-zinc-200 bg-[#f8f6f2] text-zinc-950 transition-[max-height] duration-300 lg:hidden ${open ? "max-h-128" : "max-h-0 border-transparent"}`} aria-label="Mobile navigation">
         <div className="site-shell flex flex-col py-3">
           {navLinks.map((link, index) => <Link key={link.label} href={link.href} onClick={() => setOpen(false)} className="flex items-center justify-between border-b border-zinc-200 py-4 text-lg font-semibold"><span>{link.label}</span><span className="font-mono text-xs text-zinc-400">0{index + 1}</span></Link>)}
+          <Link href="/#offer" onClick={() => setOpen(false)} className={`flex items-center justify-between border-b border-zinc-200 py-4 text-lg font-semibold transition-colors ${scrolled || open ? "text-accent-purple" : "text-accent-blue"}`}>Offer<span className="font-mono text-xs text-zinc-400">06</span></Link>
           <Link href="/#quote" onClick={() => setOpen(false)} className="button mt-5 justify-center bg-purple-700 text-white sm:hidden">Start a project</Link>
         </div>
       </nav>

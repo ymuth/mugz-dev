@@ -17,7 +17,7 @@ export default function FoundingOfferSection() {
               <div><strong className="display-heading block text-4xl tracking-[-0.04em] sm:text-5xl">£20</strong><span className="mt-2 block text-sm text-purple-100">per month</span></div>
             </div>
             <p className="mt-6 text-sm leading-6 text-purple-100">For a simple business website, including hosting and maintenance. Custom applications, databases, dashboards, automation and advanced functionality are quoted separately.</p>
-            <Link href="/#quote" className="button button-light mt-7">Ask about the offer</Link>
+            <Link href="/#quote" className="button button-light mt-7">Start a Project</Link>
           </div>
         </div>
       </div>

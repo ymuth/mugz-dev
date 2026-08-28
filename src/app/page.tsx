@@ -120,13 +120,13 @@ export default function Home() {
 
       <HeroSection />
       <section id="work"><SelectedWorkSection /></section>
-      <FoundingOfferSection />
+      <section id="offer"><FoundingOfferSection /></section>
       <section id="services"><ServicesSection /></section>
       <section id="explanation"><ExplainSection /></section>
       <section id="faq"><FAQSection /></section>
       <section id="quote"><QuoteSection /></section>
 
-    </div>
+    </div >
   );
 }
 
