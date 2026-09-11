@@ -98,8 +98,8 @@ export default function ServicesPage() {
             <p className="mt-6 max-w-2xl text-lg leading-8 text-purple-100">Available while we expand the MUGZ portfolio. It covers a simple, professionally designed business website—not custom software or advanced functionality.</p>
           </div>
           <div className="border-l border-white/25 pl-7">
-            <p className="display-heading text-4xl tracking-[-0.04em] sm:text-5xl">£150 setup</p>
-            <p className="display-heading mt-2 text-3xl tracking-[-0.04em] sm:text-4xl">+ £20/month</p>
+            <p className="display-heading text-4xl tracking-[-0.04em] sm:text-5xl">£300 setup</p>
+            <p className="display-heading mt-2 text-3xl tracking-[-0.04em] sm:text-4xl">+ £25/month</p>
             <p className="mt-5 text-sm leading-6 text-purple-100">Hosting and maintenance included. Applications, dashboards, databases, automation and advanced functionality are quoted separately.</p>
             <Link href="/#quote" className="button button-light mt-7">Ask about the offer</Link>
           </div>

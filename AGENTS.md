@@ -66,8 +66,8 @@ Do not visually copy client/demo websites such as the Vortex project. MUGZ shoul
 
 MUGZ is currently offering a limited founding-client offer:
 
-- £150 flat website setup fee
-- £20/month hosting and maintenance
+- £300 flat website setup fee
+- £25/month hosting and maintenance
 - first 5 qualifying business website clients only
 
 Present this as a deliberate limited introductory offer, not as a permanent low-cost price.

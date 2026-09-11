@@ -25,7 +25,7 @@ export default function ContactPage() {
 
             <div className="mt-8 border-l-2 border-teal-600 pl-5">
               <p className="font-semibold">Looking for the founding-client offer?</p>
-              <p className="mt-2 text-sm leading-6 text-zinc-600">The £150 setup and £20/month hosting and maintenance offer is available to our first 5 qualifying business website clients. Advanced functionality is quoted separately.</p>
+              <p className="mt-2 text-sm leading-6 text-zinc-600">The £300 setup and £25/month hosting and maintenance offer is available to our first 5 qualifying business website clients. Advanced functionality is quoted separately.</p>
               <Link href="/#quote" className="text-link mt-5 inline-flex">Use the project form</Link>
             </div>
           </aside>

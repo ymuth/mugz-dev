@@ -13,8 +13,8 @@ export default function FoundingOfferSection() {
           </div>
           <div className="border-l border-white/25 pl-6 sm:pl-9">
             <div className="grid grid-cols-2 gap-6 border-b border-white/25 pb-7">
-              <div><strong className="display-heading block text-4xl tracking-[-0.04em] sm:text-5xl">£150</strong><span className="mt-2 block text-sm text-purple-100">website setup</span></div>
-              <div><strong className="display-heading block text-4xl tracking-[-0.04em] sm:text-5xl">£20</strong><span className="mt-2 block text-sm text-purple-100">per month</span></div>
+              <div><strong className="display-heading block text-4xl tracking-[-0.04em] sm:text-5xl">£300</strong><span className="mt-2 block text-sm text-purple-100">website setup</span></div>
+              <div><strong className="display-heading block text-4xl tracking-[-0.04em] sm:text-5xl">£25</strong><span className="mt-2 block text-sm text-purple-100">per month</span></div>
             </div>
             <p className="mt-6 text-sm leading-6 text-purple-100">For a simple business website, including hosting and maintenance. Custom applications, databases, dashboards, automation and advanced functionality are quoted separately.</p>
             <Link href="/#quote" className="button button-light mt-7">Start a Project</Link>
