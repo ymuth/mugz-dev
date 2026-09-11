@@ -26,6 +26,7 @@ export default function Footer() {
               <Link href="/#quote" className="hover:text-white">Start a project</Link>
               <Link href="/#faq" className="hover:text-white">FAQ</Link>
               <Link href="/privacy" className="hover:text-white">Privacy</Link>
+              <Link href="/admin/login" className="text-zinc-500 hover:text-white">Admin</Link>
             </nav>
           </div>
         </div>

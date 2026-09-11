@@ -28,8 +28,11 @@ Unlike some of my more backend-focused projects, this site was developed with a 
 * **Tailwind CSS**
 * **Resend**
 * **Vercel**
+* **PostgreSQL**
+* **Prisma ORM**
+* **Better Auth**
 
-No database is required for this project, as enquiry information is processed directly through the application's server-side functionality and delivered by email.
+Public enquiries continue to be processed directly through the existing server-side Resend integration. PostgreSQL is used only by the private admin system for authentication, leads and supporting evidence.
 
 ## Contact Form & Email Integration
 
@@ -90,13 +93,37 @@ Clone the repository and install the dependencies:
 npm install
 ```
 
-Create a `.env` file containing the required environment variables:
+Copy `.env.example` to `.env` and provide the required environment variables:
 
 ```env
+DATABASE_URL=postgresql://...
+BETTER_AUTH_SECRET=...
+BETTER_AUTH_URL=http://localhost:3000
 RESEND_API_KEY=
 ```
 
-Additional email or deployment-related environment variables may be required depending on the configuration being used.
+Generate a Better Auth secret with `npx auth secret`. Never commit the resulting value.
+
+Create a PostgreSQL database, apply the included migrations, then generate the Prisma client:
+
+```bash
+npm run db:deploy
+npm run db:generate
+```
+
+For future schema changes in development, create a reviewed migration with:
+
+```bash
+npm run db:migrate -- --name descriptive_change_name
+```
+
+Use `npm run db:deploy` to apply reviewed migrations in existing or production environments. Never run a destructive reset against production data.
+
+Create the first administrator interactively. The CLI prompts for any omitted email or password and will warn before creating another admin:
+
+```bash
+npm run admin:create -- --email you@example.com --name "Admin"
+```
 
 Start the development server:
 
@@ -108,6 +135,12 @@ Then open:
 
 ```text
 http://localhost:3000
+```
+
+The private login is available at:
+
+```text
+http://localhost:3000/admin/login
 ```
 
 ## Production
@@ -134,4 +167,4 @@ The project particularly demonstrates experience with:
 * Managing environment variables and sensitive credentials
 * Configuring custom domains and production deployments
 
-While my other projects demonstrate more complex database, authentication and backend functionality, **mugz.dev focuses primarily on frontend quality, usability and delivering a polished production website**.
+The public site continues to showcase frontend quality and usability, while the private admin area provides the secure foundation for MUGZ's internal lead-management workflow.

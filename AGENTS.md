@@ -1,5 +1,20 @@
 # MUGZ Development Guidelines
 
+## Public website and private admin system
+
+This repository contains both the public MUGZ Development website and a private internal admin system for lead management. Work on `/admin` must not unintentionally alter the public website design or its contact functionality.
+
+- Follow the existing Next.js App Router, TypeScript and Tailwind CSS conventions.
+- Prefer Server Components. Add Client Components only where browser interaction requires them.
+- Enforce every admin authentication and authorization decision server-side, close to the protected data or mutation. Hiding UI is never an authorization control.
+- Never expose database, API or authentication secrets to client code.
+- Do not provide public admin registration or signup. Administrator accounts are created through the documented one-time CLI flow.
+- Manage database changes through reviewed Prisma migrations, never ad-hoc production schema edits or destructive resets.
+- Keep admin interfaces functional, dense and readable. Avoid generic rounded-card-heavy SaaS layouts and preserve the MUGZ identity with restraint.
+- `Lead` and `Evidence` are foundational, extensible records for later automation. Evidence must preserve why a lead fact is believed.
+- `Lead.doNotContact` is the authoritative outreach safety block. Any future drafting or sending workflow must check it directly and must never rely only on `Lead.status`.
+- Future phases may add lead research, verification, Gmail drafting and AI-assisted workflows. Do not implement AI, automated research, outreach, email sending, schedules, queues or background jobs unless a later task explicitly requires them.
+
 ## Project purpose
 
 MUGZ is a professional web development and business software studio website.

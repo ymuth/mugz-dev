@@ -1,8 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
-import NavBar from "@/components/global/Navbar";
-import Footer from "@/components/global/Footer";
 
 export const manrope = Manrope({
   variable: "--font-manrope",
@@ -88,13 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en-GB"
       className={`${manrope.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <NavBar />
-        <main className="flex-1 min-w-0">
-          {children}
-        </main>
-        <Footer />
-      </body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }

@@ -1,0 +1,210 @@
+generator client {
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  role          String?
+  banned        Boolean?  @default(false)
+  banReason     String?
+  banExpires    DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  accounts      Account[]
+
+  @@map("user")
+}
+
+model Session {
+  id             String   @id
+  expiresAt      DateTime
+  token          String   @unique
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  ipAddress      String?
+  userAgent      String?
+  userId         String
+  impersonatedBy String?
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  issuer                String
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([issuer, accountId], map: "account_issuer_accountId_uidx")
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}
+
+model Lead {
+  /// The database also enforces status/doNotContact agreement with a CHECK constraint.
+  id                 String             @id @default(cuid())
+  businessName       String
+  businessType       String?
+  location           String?
+  description        String?
+  websiteStatus      WebsiteStatus      @default(UNKNOWN)
+  websiteUrl         String?
+  email              String?
+  emailConfidence    Confidence?
+  phone              String?
+  phoneConfidence    Confidence?
+  facebookUrl        String?
+  instagramUrl       String?
+  otherSocials       String?
+  rating             Decimal?           @db.Decimal(2, 1)
+  reviewCount        Int?
+  lastActivityAt     DateTime?
+  legalEntityType    LegalEntityType    @default(UNKNOWN)
+  prospectScore      Int?
+  verificationStatus VerificationStatus @default(UNVERIFIED)
+  problemNoticed     String?
+  potentialSolution  String?
+  outreachAngle      String?
+  bestContactMethod  String?
+  status             LeadStatus         @default(NEW)
+  notes              String?
+  doNotContact       Boolean            @default(false)
+  doNotContactReason String?
+  externalPlaceId    String?            @unique
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  evidence           Evidence[]
+
+  @@index([businessName])
+  @@index([status])
+  @@index([verificationStatus])
+  @@index([websiteStatus])
+  @@index([prospectScore])
+  @@index([updatedAt])
+}
+
+model Evidence {
+  id          String             @id @default(cuid())
+  leadId      String
+  field       EvidenceField
+  value       String
+  sourceUrl   String?
+  sourceTitle String?
+  sourceType  EvidenceSourceType
+  confidence  Confidence
+  notes       String?
+  checkedAt   DateTime?
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+  lead        Lead               @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+  @@index([field])
+}
+
+enum WebsiteStatus {
+  UNKNOWN
+  NO_WEBSITE_FOUND
+  BROKEN_OR_OFFLINE
+  WEAK_EXISTING
+  GOOD_EXISTING
+}
+
+enum VerificationStatus {
+  UNVERIFIED
+  NEEDS_REVIEW
+  VERIFIED
+  REJECTED
+}
+
+enum Confidence {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum LegalEntityType {
+  UNKNOWN
+  LIMITED_COMPANY
+  LLP
+  SOLE_TRADER
+  PARTNERSHIP
+  OTHER
+}
+
+enum LeadStatus {
+  NEW
+  READY
+  DRAFTED
+  CONTACTED
+  REPLIED
+  INTERESTED
+  CALL_BOOKED
+  PREVIEW_REQUESTED
+  PREVIEW_SENT
+  WON
+  LOST
+  DO_NOT_CONTACT
+}
+
+enum EvidenceField {
+  BUSINESS_IDENTITY
+  LOCATION
+  WEBSITE
+  EMAIL
+  PHONE
+  FACEBOOK
+  INSTAGRAM
+  OTHER_SOCIAL
+  REVIEWS
+  ACTIVITY
+  LEGAL_ENTITY
+  OTHER
+}
+
+enum EvidenceSourceType {
+  OFFICIAL_WEBSITE
+  FACEBOOK
+  INSTAGRAM
+  GOOGLE_BUSINESS
+  DIRECTORY
+  COMPANIES_HOUSE
+  OTHER
+}
