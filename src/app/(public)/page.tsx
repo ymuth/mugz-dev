@@ -4,7 +4,6 @@ import QuoteSection from "@/components/home/QuoteSection";
 import ExplainSection from "@/components/home/ExplainSection";
 import FAQSection from "@/components/home/FAQSection";
 import SelectedWorkSection from "@/components/home/SelectedWorkSection";
-import FoundingOfferSection from "@/components/home/FoundingOfferSection";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -120,7 +119,6 @@ export default function Home() {
 
       <HeroSection />
       <section id="work"><SelectedWorkSection /></section>
-      <section id="offer"><FoundingOfferSection /></section>
       <section id="services"><ServicesSection /></section>
       <section id="explanation"><ExplainSection /></section>
       <section id="faq"><FAQSection /></section>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
 import PageHero from "@/components/global/PageHero";
 
@@ -21,12 +20,6 @@ export default function ContactPage() {
             <div className="mt-10 border-y border-zinc-400/70 py-7">
               <p className="eyebrow text-zinc-500">Email</p>
               <a href="mailto:hello@mugz.dev" className="mt-3 inline-block text-lg font-semibold transition hover:text-purple-700">hello@mugz.dev</a>
-            </div>
-
-            <div className="mt-8 border-l-2 border-teal-600 pl-5">
-              <p className="font-semibold">Looking for the founding-client offer?</p>
-              <p className="mt-2 text-sm leading-6 text-zinc-600">The £300 setup and £25/month hosting and maintenance offer is available to our first 5 qualifying business website clients. Advanced functionality is quoted separately.</p>
-              <Link href="/#quote" className="text-link mt-5 inline-flex">Use the project form</Link>
             </div>
           </aside>
 

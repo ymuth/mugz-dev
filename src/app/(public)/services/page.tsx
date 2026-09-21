@@ -89,23 +89,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-purple-700 text-white">
-        <div className="offer-ring" aria-hidden="true" />
-        <div className="site-shell section-space relative z-10 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-          <div>
-            <p className="eyebrow text-teal-200">Founding client offer · First 5 qualifying clients</p>
-            <h2 className="display-heading section-heading mt-6 max-w-4xl">A focused launch offer for business websites.</h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-purple-100">Available while we expand the MUGZ portfolio. It covers a simple, professionally designed business website—not custom software or advanced functionality.</p>
-          </div>
-          <div className="border-l border-white/25 pl-7">
-            <p className="display-heading text-4xl tracking-[-0.04em] sm:text-5xl">£300 setup</p>
-            <p className="display-heading mt-2 text-3xl tracking-[-0.04em] sm:text-4xl">+ £25/month</p>
-            <p className="mt-5 text-sm leading-6 text-purple-100">Hosting and maintenance included. Applications, dashboards, databases, automation and advanced functionality are quoted separately.</p>
-            <Link href="/#quote" className="button button-light mt-7">Ask about the offer</Link>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white text-zinc-950">
         <div className="site-shell section-space">
           <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">

@@ -70,7 +70,7 @@ MUGZ is currently offering a limited founding-client offer:
 - £25/month hosting and maintenance
 - first 5 qualifying business website clients only
 
-Present this as a deliberate limited introductory offer, not as a permanent low-cost price.
+Do not publish fixed offer prices or a founding-client promotion on the public website. Discuss pricing directly with each prospective client. If discussing the offer privately, present it as a deliberate limited introductory offer, not as a permanent low-cost price.
 
 Do not use fake crossed-out pricing or invented previous prices.
 

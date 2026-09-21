@@ -4,10 +4,10 @@ import { useState } from "react";
 
 const faqs = [
   ["How long does a website take?", "A simple business website will usually take a few weeks once the content and scope are agreed. Larger websites and custom software take longer; you will get a realistic timeframe before work starts."],
-  ["What does the £300 founding-client offer include?", "It covers the design and build of a simple, responsive business website for one of the first 5 qualifying clients. The exact pages and content will be agreed before work begins."],
-  ["What does the £25 monthly cost cover?", "It covers hosting, deployment and routine maintenance for a simple business website. Larger changes, new pages and advanced services are scoped separately."],
+  ["What does the initial price cover?", "It covers the design and build of a responsive business website. The exact pages and content will be agreed before work begins."],
+  ["What does the monthly cost cover?", "It covers hosting, deployment and routine maintenance for a business website. Larger changes, new pages and advanced services are scoped separately."],
   ["Do I need to provide the words and photos?", "If you already have content, send it over. If not, we can help shape the page structure and advise what is needed. Any specialist photography or extensive copywriting would be discussed separately."],
-  ["Can you build bookings, dashboards or other custom features?", "Yes. Web applications, databases, dashboards, portals, automation and integrations can be built around your requirements and are quoted separately from the website offer."],
+  ["Can you build bookings, dashboards or other custom features?", "Yes. Web applications, databases, dashboards, portals, automation and integrations can be built around your requirements and are quoted separately from a standard business website."],
   ["Who owns the website and domain?", "Your domain should be registered in your name and remain yours. Project ownership and any third-party services will be made clear in the agreed scope before work starts."],
   ["Can you make changes after launch?", "Yes. Routine maintenance is covered where included, and larger content changes, new pages or additional functionality can be quoted as the business grows."],
 ] as const;

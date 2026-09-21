@@ -224,18 +224,6 @@ a {
   user-select: none;
 }
 
-.offer-ring {
-  position: absolute;
-  top: 50%;
-  right: -10rem;
-  width: 36rem;
-  height: 36rem;
-  border: 1px solid rgb(255 255 255 / 0.15);
-  border-radius: 999px;
-  transform: translateY(-50%);
-  box-shadow: 0 0 0 5rem rgb(255 255 255 / 0.025), 0 0 0 10rem rgb(255 255 255 / 0.02);
-}
-
 .work-visual {
   position: relative;
   min-height: clamp(20rem, 46vw, 36rem);
